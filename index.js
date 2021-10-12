@@ -1,8 +1,10 @@
 const express = require("express");
 const app = express();
-const port = process.env.PORT;
 require("dotenv").config();
+const db = require;
+const port = process.env.PORT;
 app.use(express.urlencoded({ extended: true }));
+app.set("view engine", "ejs");
 
 app.get("/", function (req, res) {
   res.render("index");
