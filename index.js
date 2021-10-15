@@ -10,5 +10,11 @@ app.set("view engine", "ejs");
 app.get("/", function (req, res) {
   res.render("index");
 });
+app.get("/detalhes", function (req, res) {
+  res.render("Detalhes_produto");
+});
+app.post("/cadastro", function (req, res) {
+  res.redirect("index");
+});
 
 app.listen(3000);
