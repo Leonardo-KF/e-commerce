@@ -22,4 +22,5 @@ app.get("/login", function (req, res) {
 app.get("/carrinho", function (req, res) {
   res.render("/carrinho");
 });
+
 app.listen(3000);
