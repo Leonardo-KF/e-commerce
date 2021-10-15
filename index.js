@@ -16,7 +16,10 @@ app.get("/detalhes", function (req, res) {
 app.post("/cadastro", function (req, res) {
   res.redirect("index");
 });
-app.get("/Login", function (req, res) {
-  res.render("/");
+app.get("/login", function (req, res) {
+  res.render("/login");
+});
+app.get("/carrinho", function (req, res) {
+  res.render("/carrinho");
 });
 app.listen(3000);
