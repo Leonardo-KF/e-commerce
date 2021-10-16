@@ -1,6 +1,7 @@
 const express = require("express");
 
 const app = express();
+const Sequelize = require("sequelize");
 require("dotenv").config();
 const db = require("./model/database");
 const port = process.env.PORT;
@@ -21,7 +22,7 @@ app.get("/cadastro", function (req, res) {
 });
 app.post("/cadastro", function (req, res) {
   const { nome_completo, nome_login, senha, email, telefone } = req.body;
-  const Produtos = {
+  const login = {
     nome: nome_completo,
     login: nome_login,
     senha: senha,
