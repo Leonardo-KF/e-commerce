@@ -16,14 +16,17 @@ app.get("/", function (req, res) {
 app.get("/detalhes", function (req, res) {
   res.render("detalhes_produto");
 });
+app.get("/cadastro", function (req, res) {
+  res.render("cadastro");
+});
 app.post("/cadastro", function (req, res) {
   res.redirect("index");
 });
 app.get("/login", function (req, res) {
-  res.render("/login");
+  res.render("login");
 });
 app.get("/carrinho", function (req, res) {
-  res.render("/carrinho");
+  res.render("carrinho");
 });
 
 app.listen(3000);
