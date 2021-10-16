@@ -8,6 +8,7 @@ app.use(express.urlencoded({ extended: true }));
 const path = require("path");
 app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "ejs");
+const Produtos = {}
 
 
 app.get("/", function (req, res) {
@@ -20,7 +21,15 @@ app.get("/cadastro", function (req, res) {
   res.render("cadastro");
 });
 app.post("/cadastro", function (req, res) {
-  res.redirect("index");
+  const {nome_completo, nome_login, senha, email, telefone} = req.body;
+  const Produtos = {
+    nome: nome_completo,
+    login: nome_login,
+    senha: senha,
+    email: email,
+    telefone: telefone
+  }
+  res.redirect("/");
 });
 app.get("/login", function (req, res) {
   res.render("login");

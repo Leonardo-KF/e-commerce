@@ -3,32 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<title> Responsive Sidebar Menu  | CodingLab </title>-->
+    <link rel="stylesheet" href="style.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 </head>
 <body>
     <h1>Tela de Login</h1>
-        <section class="menu de navegação">
-            <a href="Cadastro.html" alt="Botão para a pagina de Cadastro">Cadastro</a></br>
-            <a href="Carrinho.html" alt="Botão para a pagina de Carrinho">Carrinho</a></br>
-            <a href="Detalhes_produto.html" alt="Botão para a pagina de Detalhes do produto">Detalhes de produtos</a></br>
-            <a href="Login.html" alt="Botão para a pagina de Login">Login</a></br>
-            <a href="vendedor.html" alt="Botão para a pagina do vendedor">Administrador</a></br>
-            <a href="index.html" alt="Botão para a pagina inicial">Página Inicial</a></br>
-        </section>
+    <div class="sidebar">
+        <div class="logo-details">
+          <i class='bx bxs-bot icon'></i>
+            <div class="logo_name">E-COMM</div>
+            <i class='bx bx-menu' id="btn" ></i>
+        </div>
+        <ul class="nav-list">
+          <li>
+              <i class='bx bx-search' ></i>
+             <input type="text" placeholder="Buscar...">
+             <span class="tooltip">Buscar</span>
+          </li>
+          <li>
+            <a href="/">
+              <i class='bx bx-home'></i>
+              <span class="links_name">Homepage</span>
+            </a>
+             <span class="tooltip">Homepage</span>
+          </li>
+          <li>
+           <a href="/login">
+             <i class='bx bx-log-in' ></i>
+             <span class="links_name">Login</span>
+           </a>
+           <span class="tooltip">Login</span>
+         </li>
+         <li>
+           <a href="/cadastro">
+             <i class='bx bx-user-plus' ></i>
+             <span class="links_name">Cadastro</span>
+           </a>
+           <span class="tooltip">Cadastro</span>
+         </li>
+         <!--<li>
+           <a href="#">
+             <i class='bx bx-pie-chart-alt-2' ></i>
+             <span class="links_name">Análises</span>
+           </a>
+           <span class="tooltip">Análises</span>
+         </li>
+         <li>
+           <a href="#">
+             <i class='bx bx-folder' ></i>
+             <span class="links_name">Gerenciador de arquivos</span>
+           </a>
+           <span class="tooltip">Gerenciador de arquivos</span>
+         </li>-->
+         <li>
+           <a href="/carrinho">
+             <i class='bx bx-cart-alt' ></i>
+             <span class="links_name">Carrinho</span>
+           </a>
+           <span class="tooltip">Carrinho</span>
+         </li>
+         <!--<li>
+           <a href="#">
+             <i class='bx bx-heart' ></i>
+             <span class="links_name">Favoritos</span>
+           </a>
+           <span class="tooltip">Favoritos</span>
+         </li>
+         <li>
+           <a href="#">
+             <i class='bx bx-cog' ></i>
+             <span class="links_name">Configurações</span>
+           </a>
+           <span class="tooltip">Configurações</span>
+         </li>-->
+         <li class="profile">
+             <div class="profile-details">
+               <img src="profile.jpg" alt="profileImg">
+               <div class="name_job">
+                 <div class="name">Prem Shahi</div>
+                 <div class="job">Web designer</div>
+               </div>
+             </div>
+             <i class='bx bx-log-out' id="log_out" ></i>
+         </li>
+        </ul>
+    </div>
+        <section class="home-section">
+          <!--<div class="text">Homepage</div>-->
+      
+            <script>
+            let sidebar = document.querySelector(".sidebar");
+            let closeBtn = document.querySelector("#btn");
+            let searchBtn = document.querySelector(".bx-search");
+            
+            closeBtn.addEventListener("click", ()=>{
+                sidebar.classList.toggle("open");
+                menuBtnChange();//calling the function(optional)
+            });
+            
+            searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+                sidebar.classList.toggle("open");
+                menuBtnChange(); //calling the function(optional)
+            });
+            
+            // following are the code to change sidebar button(optional)
+            function menuBtnChange() {
+            if(sidebar.classList.contains("open")){
+                closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+            }else {
+                closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+            }
+            }
+            </script>
 
-        <section class="login">
-            <div>
-                <label class="nome" for="nome">Nome do usuário: </label>
-                <input type="text" name="nome" id="nome" placeholder="Nome do usuário" required>
-            </div>
-            <div>
-                <label class="senha" for="senha">Senha: </label>
-                <input type="password" name="senha" id="senha" placeholder="Senha de acesso" required>
-            </div>
+                <section class="login">
+                    <div>
+                        <label class="nome" for="nome">Nome do usuário: </label>
+                        <input type="text" name="nome" id="nome" placeholder="Nome do usuário" required>
+                    </div>
+                    <div>
+                        <label class="senha" for="senha">Senha: </label>
+                        <input type="password" name="senha" id="senha" placeholder="Senha de acesso" required>
+                    </div>
+                </section>
+                <button type="submit">Login</button>
         </section>
-        <button type="submit">Login</button>
-    </br>
+        </br>
         <footer>Todos os direitos reservados para Leonardo Fleck e Frederico Lima 2021</footer>
 </body>
 </html>
