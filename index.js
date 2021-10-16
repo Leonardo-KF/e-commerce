@@ -1,5 +1,4 @@
 const express = require("express");
-
 const app = express();
 const Sequelize = require("sequelize");
 require("dotenv").config();
@@ -10,7 +9,15 @@ const path = require("path");
 app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "ejs");
 const Produtos = {};
-
+const sequelize = new Sequelize(process.env.DATA_URL, {
+  dialect: postgres,
+  ssl: {
+    rejectUnauthorize: false,
+  },
+  define: {
+    timestamps: false,
+  },
+});
 app.get("/", function (req, res) {
   res.render("index");
 });
