@@ -5,10 +5,16 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins" , sans-serif;
+  
 }
 
-#saudacao{
-text-align: center;
+header{
+  display: flex;
+  align-items:center;
+  flex-direction: row;
+  margin-left: 78px;
+  background-color: black;
+  color: red;
 }
 
 .sidebar{
@@ -266,7 +272,6 @@ text-align: center;
   }
 }
 .home-section .cadastro{
- 
   color:rgb(233, 3, 3);
 }
 .container-cadastro #nome_completo, #nome_login, #senha, #email, #telefone{
