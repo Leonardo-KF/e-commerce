@@ -30,11 +30,11 @@ app.post("/cadastro", function (req, res) {
   };
   res.redirect("/");
 });
-// app.get("/login", function (req, res) {
-//   res.render("login");
-// });
-// app.get("/carrinho", function (req, res) {
-//   res.render("carrinho");
-// });
+app.get("/login", function (req, res) {
+  res.render("login");
+});
+app.get("/carrinho", function (req, res) {
+  res.render("carrinho");
+});
 
 app.listen(3000);
