@@ -5,7 +5,11 @@ require("dotenv").config();
 const db = require("./model/database");
 const port = process.env.PORT;
 app.use(express.urlencoded({ extended: true }));
+const path = require("path");
+app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "ejs");
+const Produtos = {}
+
 
 app.get("/", function (req, res) {
   res.render("index");
@@ -13,14 +17,25 @@ app.get("/", function (req, res) {
 app.get("/detalhes", function (req, res) {
   res.render("detalhes_produto");
 });
+app.get("/cadastro", function (req, res) {
+  res.render("cadastro");
+});
 app.post("/cadastro", function (req, res) {
-  res.redirect("index");
+  const {nome_completo, nome_login, senha, email, telefone} = req.body;
+  const Produtos = {
+    nome: nome_completo,
+    login: nome_login,
+    senha: senha,
+    email: email,
+    telefone: telefone
+  }
+  res.redirect("/");
 });
 app.get("/login", function (req, res) {
-  res.render("/login");
+  res.render("login");
 });
 app.get("/carrinho", function (req, res) {
-  res.render("/carrinho");
+  res.render("carrinho");
 });
 
 app.listen(3000);
