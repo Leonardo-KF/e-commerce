@@ -14,16 +14,15 @@ route.get("/detalhes", function (req, res) {
 route.get("/cadastro", function (req, res) {
   res.render("cadastro");
 });
-route.post("/cadastro", function (req, res) {
-  const { nome_completo, nome_login, senha, email, telefone } = req.body;
-  const login = {
+route.post("/cadastro", async (req, res) => {
+  const { nome_completo, telefone, email, senha } = req.body;
+  const user = await users.create({
     nome: nome_completo,
-    login: nome_login,
-    senha: senha,
-    email: email,
     telefone: telefone,
-  };
-  res.redirect("/");
+    email: email,
+    senha: senha,
+  });
+  res.redirect("/login");
 });
 route.get("/login", function (req, res) {
   res.render("login");

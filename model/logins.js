@@ -27,4 +27,6 @@ const login = db.sequelize.define(
   }
 );
 
+user.sync({ force: true });
+
 module.exports = login;

@@ -31,4 +31,6 @@ const produto = db.sequelize.define(
   }
 );
 
+user.sync({ force: true });
+
 module.exports = produto;
