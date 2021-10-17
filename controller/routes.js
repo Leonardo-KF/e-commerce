@@ -27,6 +27,8 @@ route.post("/cadastro", async (req, res) => {
 route.get("/login", function (req, res) {
   res.render("login");
 });
+
+route.post("/login", async (req, res) => {});
 route.get("/carrinho", function (req, res) {
   res.render("carrinho");
 });
