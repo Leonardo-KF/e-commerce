@@ -10,6 +10,7 @@ const produto = db.sequelize.define(
       allowNull: false,
       primaryKey: true,
     },
+    img: {},
     nome: {
       type: Sequelize.STRING,
       allowNull: false,
@@ -30,7 +31,5 @@ const produto = db.sequelize.define(
     updatedAt: false,
   }
 );
-
-produto.sync({ force: false });
 
 module.exports = produto;

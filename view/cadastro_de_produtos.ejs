@@ -34,6 +34,10 @@
                 <label class="imagem" for="imagem">Imagem: </label>
                 <input type="file" name="imagem" id="imagem" placeholder="Escolha a imagem do seu produto" required>
             </div>
+            <form method="post" enctype="multipart/form-data">
+                <input type="file" name="file">
+                <input type="submit" value="upload"> 
+            </form>
 
             <button type="submit">Cadastrar Produto</button>
         </section>

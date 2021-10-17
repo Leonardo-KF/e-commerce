@@ -4,8 +4,9 @@ const logins = require(".././model/logins");
 const produtos = require(".././model/produtos");
 const users = require(".././model/users");
 
-route.get("/", function (req, res) {
-  res.render("index");
+route.get("/", async (req, res) => {
+  const items = await produtos.findAll();
+  res.render("index", { items: items });
 });
 route.get("/detalhes", function (req, res) {
   res.render("detalhes_produto");

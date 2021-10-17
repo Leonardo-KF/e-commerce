@@ -94,7 +94,15 @@
         </ul>
       </div>
       <section class="home-section">
-          <div class="text">Homepage</div>
+        <% items.forEach(item => { %>
+          <a href="">
+            <img src="<%= item.img %>">
+            <h2><%= item.nome %></h2>  
+            <h2><%= item.preço %></h2>  
+          </a>  
+          <a href="/cargoeditar/<%=item.ID%>"><button>Editar</button></a> 
+          <a href="/cargodelete/<%=item.ID%>"><button>Excluir</button></a>   
+      <% }) %> 
       </section>
       <script>
       let sidebar = document.querySelector(".sidebar");

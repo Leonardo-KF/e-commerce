@@ -1,7 +1,7 @@
 const db = require("./database");
 const Sequelize = require("sequelize");
 
-const login = database.define(
+const login = db.sequelize.define(
   "login",
   {
     id: {
