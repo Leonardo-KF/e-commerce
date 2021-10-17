@@ -10,7 +10,6 @@ const produto = db.sequelize.define(
       allowNull: false,
       primaryKey: true,
     },
-    img: {},
     nome: {
       type: Sequelize.STRING,
       allowNull: false,

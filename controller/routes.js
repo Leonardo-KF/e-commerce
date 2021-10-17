@@ -31,3 +31,5 @@ route.get("/login", function (req, res) {
 route.get("/carrinho", function (req, res) {
   res.render("carrinho");
 });
+
+module.exports = route;
