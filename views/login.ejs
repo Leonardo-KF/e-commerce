@@ -11,7 +11,14 @@
     <title>Login</title>
 </head>
 <body>
-    <h1>Tela de Login</h1>
+  <section class="bodybox">
+    <form class="box" action="index.html" method="post">
+      <h1>Login</h1>
+      <input type="text" name="" placeholder="Username">
+      <input type="password" name="" placeholder="Password">
+      <input type="submit" name="" value="Login">
+    </form>
+  </section>
     <div class="sidebar">
         <div class="logo-details">
           <i class='bx bxs-bot icon'></i>
@@ -93,6 +100,7 @@
         </ul>
     </div>
         <section class="home-section">
+<<<<<<< HEAD
 
                 <section class="login">
                     <div>
@@ -107,7 +115,38 @@
                 <button type="submit">Login</button>
         </section>
         <script src="../controller/sidebarc.js"></script>
+=======
+          <!--<div class="text">Homepage</div>-->
+      
+            <script>
+            let sidebar = document.querySelector(".sidebar");
+            let closeBtn = document.querySelector("#btn");
+            let searchBtn = document.querySelector(".bx-search");
+            
+            closeBtn.addEventListener("click", ()=>{
+                sidebar.classList.toggle("open");
+                menuBtnChange();//calling the function(optional)
+            });
+            
+            searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+                sidebar.classList.toggle("open");
+                menuBtnChange(); //calling the function(optional)
+            });
+            
+            // following are the code to change sidebar button(optional)
+            function menuBtnChange() {
+            if(sidebar.classList.contains("open")){
+                closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+            }else {
+                closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+            }
+            }
+            </script>  
+          </section>
+          
+>>>>>>> eb1c60ffd65466f9f80d321df7c3139096bbc7e3
         </br>
-        <footer>Todos os direitos reservados para Leonardo Fleck e Frederico Lima 2021</footer>
+      <footer>Todos os direitos reservados para Leonardo Fleck e Frederico Lima 2021</footer>
+      
 </body>
 </html>
