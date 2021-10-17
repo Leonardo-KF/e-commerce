@@ -17,9 +17,13 @@ header .home{
   display: flex;
   align-items:center;
   flex-direction: row;
-  margin-left: 78px;
+  margin-left: 64px;
   background-color: black;
   color: red;
+}
+
+footer{
+  margin-left: 64px;
 }
 
 .sidebar{
