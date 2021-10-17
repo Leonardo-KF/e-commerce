@@ -8,6 +8,11 @@
   
 }
 
+body{
+  color: black;
+  margin-left: 64px;
+}
+
 header .home{
   display: flex;
   align-items:center;
@@ -23,7 +28,7 @@ header .home{
   top: 0;
   height: 100%;
   width: 78px;
-  /*background: #11101D;*/
+  /*background: #29254b;*/
   background:black;
   padding: 6px 14px;
   z-index: 99;
@@ -125,7 +130,7 @@ header .home{
   border: none;
   border-radius: 12px;
   transition: all 0.5s ease;
-  background: #1d1b31;
+  background: #29254b;
 }
 .sidebar.open input{
   padding: 0 20px 0 50px;
@@ -137,18 +142,18 @@ header .home{
   left: 0;
   transform: translateY(-50%);
   font-size: 22px;
-  background: #1d1b31;
+  background: #29254b;
   color: #FFF;
   color: red;
 }
 .sidebar.open .bx-search:hover{
-  background: #1d1b31;
+  background: #29254b;
   color: #FFF;
   color: red;
 }
 .sidebar .bx-search:hover{
   background: #FFF;
-  color: #11101d;
+  color: #29254b;
   color: red;
 }
 .sidebar li a{
@@ -159,7 +164,7 @@ header .home{
   align-items: center;
   text-decoration: none;
   transition: all 0.4s ease;
-  background: #11101D;
+  background: #29254b;
 }
 .sidebar li a:hover{
   background: #FFF;
@@ -181,7 +186,7 @@ header .home{
 .sidebar li a:hover .links_name,
 .sidebar li a:hover i{
   transition: all 0.5s ease;
-  color: #11101D;
+  color: #29254b;
   color: red;
 }
 .sidebar li i{
@@ -245,8 +250,6 @@ header .home{
 .home-section{
   position: relative;
   background: #E4E9F7;
-  background-image: url('https://wallpaperaccess.com/full/893644.jpg');
-  background-repeat: no-repeat;
   background-size:cover;
   min-height: 100vh;
   top: 0;
@@ -261,7 +264,7 @@ header .home{
 }
 .home-section .text{
   display: inline-block;
-  color: #11101d;
+  color: #29254b;
   font-size: 25px;
   font-weight: 500;
   margin: 18px
@@ -292,3 +295,63 @@ header .home{
   border-color: white;
   cursor: pointer;
 }
+.boxbody{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #34495e;
+}
+.box{
+  width: 710px;
+  height: 444px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: #191919;
+  background-image: url('https://besthqwallpapers.com/Uploads/15-12-2016/10947/thumb2-fsociety-mask-4k-black-background.jpg');
+  text-align: center;
+}
+.box h1{
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.box input[type = "text"],.box input[type = "password"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 5px solid red;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+.box input[type = "text"]:focus,.box input[type = "password"]:focus{
+  width: 280px;
+  border-color: #29254b;
+}
+.box input[type = "submit"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  margin-top: 150px;
+  text-align: center;
+  border: 5px solid #2ecc71;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.box input[type = "submit"]:hover{
+  background: #2ecc71;
+}
+
