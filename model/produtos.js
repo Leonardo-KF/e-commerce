@@ -1,7 +1,7 @@
 const db = require("./database");
 const Sequelize = require("sequelize");
 
-const produto = database.define(
+const produto = db.sequelize.define(
   "produto",
   {
     id: {
@@ -30,5 +30,7 @@ const produto = database.define(
     updatedAt: false,
   }
 );
+
+produto.sync({ force: false });
 
 module.exports = produto;

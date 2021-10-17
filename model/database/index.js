@@ -1,7 +1,7 @@
 const { Sequelize } = require("sequelize");
 require("dotenv").config();
 
-const sequelize = new Sequelize(DATA_URL);
+const sequelize = new Sequelize(process.env.DATA_URL);
 
 async function conectado() {
   try {
