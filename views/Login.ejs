@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--<title> Responsive Sidebar Menu  | CodingLab </title>-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="..//style.css">
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 </head>
 <body>
-    <h1>Tela de Login</h1>
     <div class="sidebar">
         <div class="logo-details">
           <i class='bx bxs-bot icon'></i>
@@ -94,7 +93,14 @@
     </div>
         <section class="home-section">
           <!--<div class="text">Homepage</div>-->
-      
+            <section class="boxbody"></section>
+              <form class="box" action="index.html" method="post">
+                <h1>Login</h1>
+                <input type="text" name="" placeholder="Username">
+                <input type="password" name="" placeholder="Password">
+                <input type="submit" name="" value="Login">
+              </form>
+            </section>    
             <script>
             let sidebar = document.querySelector(".sidebar");
             let closeBtn = document.querySelector("#btn");
