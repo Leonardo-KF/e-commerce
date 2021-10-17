@@ -100,45 +100,8 @@
         </ul>
     </div>
         <section class="home-section">
-                <section class="login">
-                    <div>
-                        <label class="nome" for="nome">Nome do usuário: </label>
-                        <input type="text" name="nome" id="nome" placeholder="Nome do usuário" required>
-                    </div>
-                    <div>
-                        <label class="senha" for="senha">Senha: </label>
-                        <input type="password" name="senha" id="senha" placeholder="Senha de acesso" required>
-                    </div>
-                </section>
-                <button type="submit">Login</button>
-        </section>
-        <script src="../controller/sidebarc.js"></script>      
-            <script>
-            let sidebar = document.querySelector(".sidebar");
-            let closeBtn = document.querySelector("#btn");
-            let searchBtn = document.querySelector(".bx-search");
-            
-            closeBtn.addEventListener("click", ()=>{
-                sidebar.classList.toggle("open");
-                menuBtnChange();//calling the function(optional)
-            });
-            
-            searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
-                sidebar.classList.toggle("open");
-                menuBtnChange(); //calling the function(optional)
-            });
-            
-            // following are the code to change sidebar button(optional)
-            function menuBtnChange() {
-            if(sidebar.classList.contains("open")){
-                closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
-            }else {
-                closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
-            }
-            }
-            </script>  
-          </section>
-        
+        <script src="../controller/sidebarc.js"></script>
+      </section>
         </br>
       <footer>Todos os direitos reservados para Leonardo Fleck e Frederico Lima 2021</footer>
       

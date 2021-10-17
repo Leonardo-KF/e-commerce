@@ -249,7 +249,7 @@ header .home{
 }
 .home-section{
   position: relative;
-  background: #E4E9F7;
+  background: none;
   background-size:cover;
   min-height: 100vh;
   top: 0;
