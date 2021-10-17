@@ -121,14 +121,10 @@
           }
           </script> 
             <section class="container-cadastro">
-                <section class="cadastro">
+                <form method="POST">
                     <div>
                         <label class="nome_completo" for="nome">Nome completo: </label>
                         <input type="text" name="nome_completo" id="nome_completo" placeholder="Nome completo" required>
-                    </div>
-                    <div>
-                        <label class="nome_login" for="nome">Login: </label>
-                        <input type="text" name="nome_login" id="nome_login" placeholder="Login do usuário" required>
                     </div>
                     <div>
                         <label class="senha" for="senha">senha: </label>
@@ -144,7 +140,7 @@
                     </div>
                 </br>
                     <button id="btn-cad" type="submit">Enviar informações</button>
-                </section>
+              </form>
             </section>
         </section>
     </form>    
