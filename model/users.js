@@ -1,7 +1,8 @@
-const db = require("./../database");
+const db = require("./database");
+const Sequelize = require("sequelize");
 
-const login = database.define(
-  "logins",
+const user = database.define(
+  "user",
   {
     id: {
       type: Sequelize.INTEGER,
@@ -33,3 +34,5 @@ const login = database.define(
     updatedAt: false,
   }
 );
+
+module.exports = user;
