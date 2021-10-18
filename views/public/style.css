@@ -8,22 +8,17 @@
   
 }
 
-body{
-  color: black;
-  margin-left: 64px;
-}
-
 header .home{
   display: flex;
   align-items:center;
   flex-direction: row;
-  margin-left: 64px;
+  margin-left: 120px;
   background-color: black;
   color: red;
 }
 
 footer{
-  margin-left: 64px;
+  margin-left: 78px;
 }
 
 .sidebar{
@@ -281,6 +276,9 @@ footer{
 .home-section .cadastro{
   color:rgb(233, 3, 3);
 }
+.home-section #login{
+  color:#6e6767;
+}
 .container-cadastro #nome_completo, #nome_login, #senha, #email, #telefone{
   display: flex;
   align-items: flex-start;
@@ -306,15 +304,14 @@ footer{
   background: #34495e;
 }
 .box{
-  width: 710px;
-  height: 444px;
+  width: 450px;
+  height: 344px;
   padding: 40px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  background: #191919;
-  background-image: url('https://besthqwallpapers.com/Uploads/15-12-2016/10947/thumb2-fsociety-mask-4k-black-background.jpg');
+  background: #6e6767;
   text-align: center;
 }
 .box h1{
@@ -345,7 +342,7 @@ footer{
   background: none;
   display: block;
   margin: 20px auto;
-  margin-top: 150px;
+  margin-top: 20px;
   text-align: center;
   border: 5px solid #2ecc71;
   padding: 14px 40px;
