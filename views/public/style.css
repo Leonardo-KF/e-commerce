@@ -21,6 +21,13 @@ footer{
   margin-left: 78px;
 }
 
+img{
+  max-width: 100%;
+  display:block;
+}
+
+/* CSS do side bar*/
+
 .sidebar{
   position: fixed;
   left: 0;
@@ -278,14 +285,13 @@ footer{
 }
 #login{
   display: flex;
-  justify-content: center;
+  max-width: 100%;
   background-color:#6e6767;
 }
-#img-login{
-  display: flex;
-  flex-direction: column;
-  align-content: space-between;
+#login > section{
+  flex:1 1 200px;
 }
+
 .container-cadastro #nome_completo, #nome_login, #senha, #email, #telefone{
   display: flex;
   align-items: flex-start;
@@ -320,6 +326,9 @@ footer{
   transform: translate(-50%,-50%);
   background: #6e6767;
   text-align: center;
+}
+#img-login{
+  margin-left: calc(75%/2);
 }
 .box h1{
   color: white;
@@ -362,4 +371,4 @@ footer{
 .box input[type = "submit"]:hover{
   background: #2ecc71;
 }
-
+/* Final do CSS do Side bar*/
