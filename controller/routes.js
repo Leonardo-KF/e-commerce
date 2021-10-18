@@ -40,14 +40,13 @@ route.get("/login", function (req, res) {
 
 route.post("/login", async (req, res) => {
   const { email, senha } = req.body;
-  const login = await users.findAll({
+  const login = await users.findOne({
     where: { email: email, senha: senha },
   });
-
-  if (login[0] == 0) {
-    // verificar com o professor para catar um usuario no banco
+  console.log(login.email);
+  if (login.email == "admin@admin" && login.senha == "admin") {
     res.redirect("/dashboard");
-  } else if (login[0] != undefined) {
+  } else if (login != undefined) {
     res.redirect("/");
   } else {
     res.redirect("/login", { msg: msgErro });
