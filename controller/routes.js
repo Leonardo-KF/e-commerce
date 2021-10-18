@@ -29,7 +29,7 @@ route.post("/cadastro", async (req, res) => {
       senha: senha,
     });
   } else {
-    res.render("/cadastro", { msg: msgUser });
+    res.redirect("/cadastro", { msg: msgUser });
   }
 
   res.redirect("/login");
