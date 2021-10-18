@@ -4,6 +4,7 @@ const produtos = require(".././model/produtos");
 const users = require(".././model/users");
 const msgErro = "Usuario ou senha incorreto!";
 const msgUser = "Este email já foi cadastrado! Por favor tente novamente";
+const msgCad = "Produto cadastrado com sucesso";
 
 route.get("/", async (req, res) => {
   const items = await produtos.findAll();
@@ -28,7 +29,7 @@ route.post("/cadastro", async (req, res) => {
       senha: senha,
     });
   } else {
-    res.render("/cadastro", { msg: msgUser });
+    res.redirect("/cadastro", { msg: msgUser });
   }
 
   res.redirect("/login");
