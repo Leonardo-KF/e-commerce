@@ -12,7 +12,11 @@
 </head>
 <body>
     <header class="home"> <img src='./img/icone-header.png' alt='Imagem da mascara da serie mister robot' width="100px" height="100px">
-      Sejam bem vindos ao E-COMM, o Mr. Robot E-commerce
+      <h2>Sejam bem vindos ao E-COMM, o Mr. Robot E-commerce</h2>
+      <div class="menu-aberto">
+        <span>0</span>
+        <span class="links_name">Carrinho</span>
+      </div>
     </header>
     <div class="sidebar">
         <div class="logo-details">
@@ -95,12 +99,46 @@
         </ul>
       </div>
       <section class="home-section">
-        <% items.forEach(item => { %>
-          <a href="">
-            <h2><%= item.nome %></h2>  
-            <h2><%= item.preço %></h2>  
-          </a>  
-        <% }) %> 
+        <div class="produtos">
+          <div class="models-produto">
+            <a href="">
+              <div class="models-produto-img">
+                <img src="" alt="">
+              </div>
+              <div class="models-produto-add">+</div>
+            </a>
+            <div class="models-produto-valor">R$</div>
+            <div class="models-produto-nome">---</div>
+            <div class="models-produto-descri">---</div>
+          </div>
+          <div class="cart-produto">
+            <img src="" alt="">
+            <div class="cart-produto-qtdarea">
+              <button class="cart-item-">-</button>
+              <div class="cart-produto-qtd">1</div>
+              <button class="cart-item+">+</button>
+            </div>
+          </div>
+        </div>
+        <main>
+          <div class="modelo-area"></div>
+        </main>
+        <aside>
+          <div class='cart-area'>
+            <div class="menu-closer">
+              <span class="material-icons">close</span>
+            </div>
+            <h2>seus produtos</h2>
+            <div class="cart"></div>
+            <div class="cart-detalhes">
+              <div class="cart-total-produto subtotal">
+                <span>Subtotal</span>
+                <span>R$--</span>
+              </div>
+              <div class="cart-finalizar">comprar</div>
+            </div>
+          </div>
+        </aside>
       </section>
       <script>
       let sidebar = document.querySelector(".sidebar");
