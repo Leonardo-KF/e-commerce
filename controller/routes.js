@@ -26,15 +26,15 @@ route.get("/", async (req, res) => {
   const items = await produtos.findAll();
   res.render("index", { items: items });
 });
-route.get("/detalhes", function (req, res) {
-  res.render("detalhes_produto");
-});
+
 route.get("/dashboard", async (req, res) => {
   res.render("dashboard");
 });
+
 route.get("/cadastro", function (req, res) {
   res.render("cadastro");
 });
+
 route.post("/cadastro", async (req, res) => {
   const { nome_completo, telefone, email, senha } = req.body;
   const user = await users.findAll({
@@ -53,6 +53,7 @@ route.post("/cadastro", async (req, res) => {
 
   res.redirect("/login");
 });
+
 route.get("/login", function (req, res) {
   res.render("login");
 });
@@ -78,7 +79,6 @@ route.get("/cdp", function (req, res) {
 route.post("/cdp", upload.single("file"), async (req, res) => {
   const { nome, preco, descricao } = req.body;
   const img = req.file.filename;
-  console.log(img);
   const produto = await produtos.create({
     nome: nome,
     img: img,
