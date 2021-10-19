@@ -14,6 +14,10 @@ const produto = db.sequelize.define(
       type: Sequelize.STRING,
       allowNull: false,
     },
+    img: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
     preço: {
       type: Sequelize.FLOAT,
       allowNull: false,
