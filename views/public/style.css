@@ -5,17 +5,22 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins" , sans-serif;
-  
 }
 
-header .home{
+#home{
   display: flex;
-  align-items:center;
-  flex-direction: row;
-  margin-left: 120px;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 0px;
   background-color: black;
   color: red;
 }
+
+#carrinho{
+  font-size:27px;
+  cursor: pointer;
+}
+
 
 footer{
   margin-left: 78px;
@@ -25,6 +30,168 @@ img{
   max-width: 100%;
   display:block;
 }
+
+/* CSS do carrinho*/
+
+.produtos{
+  display: none;
+}
+
+.menu-aberto{
+  margin-right: 15px;
+  font-size: 26px;
+  background-color: #A9DCFF;
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+
+.menu-aberto span{
+  margin-right: 10px;
+}
+
+.menu-closer{
+  width: 32px;
+  height: 32px;
+  display: none;
+  font-size: 30px;
+}
+
+aside{
+  background-color: red;
+  width: 0vw;
+  font-family: sans-serif;
+  transition: all ease .2s;
+  overflow-x: hidden; 
+}
+
+aside.show{
+  width: 30vw;
+}
+
+.cart-area{
+  padding: 20px;
+}
+
+main{
+  flex: 1;
+  padding: 20px;
+}
+
+h2{
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.modelo-area{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.models-produto{
+  text-align: center;
+  max-width: 250px;
+  font-family: sans-serif;
+  margin: 0 auto 50px auto;
+}
+
+.models-produto a{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+.models-produto-img{
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  border-radius: 100px;
+  box-shadow: 0px 10px 50px rgba(0,0,0, 0.2);
+}
+
+.models-produto-img img{
+  width: 100%;
+  height: auto;
+}
+
+.models-produto-add{
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 25px;
+  background-color: blueviolet;
+  text-align: center;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  margin-top: -25px;
+  transition: all ease .2s;
+}
+
+.models-produto a:hover .models-produto-add{
+  background-color: #2ecc71;
+}
+
+.models-item-valor{
+  font-size: 15px;
+  color:coral;
+  margin-top: 5px;
+}
+
+.models-item-nome{
+  font-size: 15px;
+  color:brown;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.models-item-descri{
+  font-size: 15px;
+  color:chocolate;
+  margin-top: 10px;
+}
+
+.modelsWindowArea{
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(144,122,333, 0.5);
+  display: none;
+  transition: all ease .5s;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+
+.modelsWindowsbody{
+  width: 900px;
+  background-color: aliceblue;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px #999;
+  display: flex;
+  margin: 20px 0;
+}
+
+.modelsbig{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modelsbig--back{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: aqua;
+}
+
+.modelsbig img{
+  height: 400px;
+  width: auto;
+}
+
 
 /* CSS do side bar*/
 
