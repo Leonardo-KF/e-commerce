@@ -11,13 +11,6 @@
     <title>Ecommerce</title>
 </head>
 <body>
-    <header class="home"> <img src='./img/icone-header.png' alt='Imagem da mascara da serie mister robot' width="100px" height="100px">
-      <h2>Sejam bem vindos ao E-COMM, o Mr. Robot E-commerce</h2>
-      <div class="menu-aberto">
-        <span>0</span>
-        <span class="links_name">Carrinho</span>
-      </div>
-    </header>
     <div class="sidebar">
         <div class="logo-details">
           <i class='bx bxs-bot icon'></i>
@@ -65,13 +58,7 @@
            </a>
            <span class="tooltip">Gerenciador de arquivos</span>
          </li>-->
-         <li>
-           <a href="/carrinho">
-             <i class='bx bx-cart-alt' ></i>
-             <span class="links_name">Carrinho</span>
-           </a>
-           <span class="tooltip">Carrinho</span>
-         </li>
+         
          <!--<li>
            <a href="#">
              <i class='bx bx-heart' ></i>
@@ -99,6 +86,15 @@
         </ul>
       </div>
       <section class="home-section">
+        <header id="home"> <img src='./img/icone-header.png' alt='Imagem da mascara da serie mister robot' width="100px" height="100px">
+          <h2>Sejam bem vindos ao E-COMM, o Mr. Robot E-commerce</h2>
+          <div class="menu-aberto">
+            <span id="carrinho">0</span>
+            <a href="/carrinho"></a>
+            <i id="carrinho" class='bx bx-cart-alt'></i>
+            <span class="links_name"></span>
+          </div>
+        </header>
         <div class="produtos">
           <div class="models-produto">
             <a href="">
@@ -148,14 +144,6 @@
             <div class="modelsInfo">
               <h2>--</h2>
               <div class="modelsInfo-descri">--</div>
-              <div class="modelsInfo-sizearea">
-                <div class="modelsInfo-sector">escala</div>
-                <div class="modelsInfo-sizes">
-                  <div data-key="0" class="modelsInfo-size">1/72<span>--</span></div>
-                  <div data-key="1" class="modelsInfo-size">1/48<span>--</span></div>
-                  <div data-key="2" class="modelsInfo-size selected">1/32<span>--</span></div>
-                </div>
-              </div>
               <div class="models-preco">
                 <div class="modelsInfo-preco">R$--</div>
               </div>
