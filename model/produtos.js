@@ -18,11 +18,11 @@ const produto = db.sequelize.define(
       type: Sequelize.STRING,
       allowNull: false,
     },
-    preço: {
+    preco: {
       type: Sequelize.FLOAT,
       allowNull: false,
     },
-    descrição: {
+    descricao: {
       type: Sequelize.TEXT,
       allowNull: false,
     },
@@ -35,6 +35,6 @@ const produto = db.sequelize.define(
   }
 );
 
-produto.sync({ force: false });
+produto.sync({ force: true });
 
 module.exports = produto;

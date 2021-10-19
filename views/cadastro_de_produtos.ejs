@@ -18,28 +18,27 @@
         </section>
 
         <section class="Cadastro de produtos">
-            <div>
-                <label class="nome_produto" for="nome">Nome do produto: </label>
-                <input type="text" name="nome_produto" id="nome_produto" placeholder="Nome do produto" required>
-            </div>
-            <div>
-                <label class="preco" for="preco">Preço: </label>
-                <input type="text" name="preco" id="preco" placeholder="Preço produto" required>
-            </div>
-            <div>
-                <label class="descricao" for="descricao">Descrição do produto: </label>
-                <input type="text" name="descricao" id="descricao" placeholder="Descrição do produto" required>
-            </div>
-            <div>
-                <label class="imagem" for="imagem">Imagem: </label>
-                <input type="file" name="imagem" id="imagem" placeholder="Escolha a imagem do seu produto" required>
-            </div>
-            <form method="post" enctype="multipart/form-data">
-                <input type="file" name="file">
-                <input type="submit" value="upload"> 
+            <form method="post" enctype="multipart/form-data" action="/cdp">
+                <div>
+                    <label class="nome" for="nome">Nome do produto: </label>
+                    <input type="text" name="nome" id="nome" placeholder="Nome do produto" required>
+                </div>
+                <div>
+                    <label class="preco" for="preco">Preço: </label>
+                    <input type="text" name="preco" id="preco" placeholder="Preço produto" required>
+                </div>
+                <div>
+                    <label class="descricao" for="descricao">Descrição do produto: </label>
+                    <input type="text" name="descricao" id="descricao" placeholder="Descrição do produto" required>
+                </div>
+                <div>
+                    <label class="imagem" for="imagem">Imagem: </label>
+                    <input type="file" name="file" id="imagem" placeholder="Escolha a imagem do seu produto" required>
+                </div>
+                    <button type="submit">Cadastrar Produto</button>
             </form>
 
-            <button type="submit">Cadastrar Produto</button>
+           
         </section>
     </br>
         <footer>Todos os direitos reservados para Leonardo Fleck e Frederico Lima 2021</footer>
