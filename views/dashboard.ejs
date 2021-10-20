@@ -18,7 +18,14 @@
         </section>
 
         <section class="painel_inicial">
-            <!--O que vai mostrar logo que abrir essa pagina?-->
+            <% items.forEach(item => { %>
+                <div class="produtos-dashboard">
+                    <div class="produtos-dash-img">item.img</div>
+                    <div class="produtos-dashname">item.nome</div>
+                    <a href="/deletar/<%= item.id %>">DELETAR</a>
+                    <a href="/update/<%= item.id %>">ATUALIZAR</a>
+                </div>
+            <% }); %>
         </section>
 
 
