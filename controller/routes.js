@@ -93,4 +93,6 @@ route.post("/cdp", upload.single("file"), async (req, res) => {
   res.redirect("/dashboard");
 });
 
+route.get("/udpate/:id", async (req, res) => {});
+
 module.exports = route;
