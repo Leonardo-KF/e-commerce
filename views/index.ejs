@@ -92,7 +92,7 @@
           <div class="modelo-area">
             <% items.forEach(item => { %>
               <div class="models-produto">
-                <a href="">
+                <a href="" class="allas">
                   <div class="models-produto-img">
                     <img src="/img/<%= item.img %>" alt="">
                   </div>
@@ -121,7 +121,7 @@
             </div>
           </div>
         </aside>
-        <div class="modelsWindowArea">
+        <div class="modelsWindowArea" id="window-area">
           <div class="modelsWindowsBody">
             <div class="modelsinfo-cancelbutton">voltar</div>
             <div class="modelsbig">
@@ -138,6 +138,7 @@
             </div>
           </div>
         </div>
+        <script src="/script.js"></script>
       </section>
       <script>
       let sidebar = document.querySelector(".sidebar");
