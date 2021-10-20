@@ -8,6 +8,8 @@
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/script.js" defer></script>
     <title>Ecommerce</title>
 </head>
 <body>
@@ -92,7 +94,7 @@
           <div class="modelo-area">
             <% items.forEach(item => { %>
               <div class="models-produto">
-                <a href="" class="allas">
+                <a href="" class="allas" id="<%= item.id %>">
                   <div class="models-produto-img">
                     <img src="/img/<%= item.img %>" alt="">
                   </div>
@@ -121,24 +123,25 @@
             </div>
           </div>
         </aside>
-        <div class="modelsWindowArea" id="window-area">
+        <% items.forEach(item => { %>
+        <div class="modelsWindowArea" id="w<%= item.id %>">    
           <div class="modelsWindowsBody">
-            <div class="modelsinfo-cancelbutton">voltar</div>
-            <div class="modelsbig">
-              <img src="" alt="">
-            </div>
-            <div class="modelsInfo">
-              <h2>--</h2>
-              <div class="modelsInfo-descri">--</div>
-              <div class="models-preco">
-                <div class="modelsInfo-preco">R$--</div>
+             <div class="modelsinfo-cancelbutton">voltar</div>
+              <div class="modelsbig">
+                <img src="/img/<%= item.img %>" alt="<%= item.nome %>">
               </div>
-              <div class="modelsInfo-addbutton">Adcionar ao carrinho</div>
-              <div class="modelsInfo-cancelbutton">Cancelar</div>
-            </div>
+              <div class="modelsInfo">
+                <h2><%= item.nome %></h2>
+                <div class="modelsInfo-descri" id="descricao-prod"><=% item.descricao %></div>
+                <div class="models-preco">
+                  <div class="modelsInfo-preco">R$<%= item.preco %></div>
+                </div>
+                <div class="modelsInfo-addbutton">Adcionar ao carrinho</div>
+                <div class="modelsInfo-cancelbutton">Cancelar</div>
+              </div>
           </div>
         </div>
-        <script src="/script.js"></script>
+        <% }); %>
       </section>
       <script>
       let sidebar = document.querySelector(".sidebar");

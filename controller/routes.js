@@ -27,6 +27,11 @@ route.get("/", async (req, res) => {
   res.render("index", { items: items });
 });
 
+route.get("/info", async (req, res) => {
+  const produtos = await produtos.findAll();
+  res.json(produtos);
+});
+
 route.get("/dashboard", async (req, res) => {
   res.render("dashboard");
 });
