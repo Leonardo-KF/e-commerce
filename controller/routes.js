@@ -24,7 +24,6 @@ const upload = multer({ storage });
 
 route.get("/", async (req, res) => {
   const items = await produtos.findAll();
-  console.log(items);
   res.render("index", { items: items });
 });
 
