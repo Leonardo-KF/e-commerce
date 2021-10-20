@@ -20,7 +20,7 @@
         <ul class="nav-list">
           <li>
               <i class='bx bx-search' ></i>
-             <input type="text" placeholder="Buscar...">
+             <input type="text" id="buscarInput" onkeyup="myFunction()" placeholder="Buscar...">
              <span class="tooltip">Buscar</span>
           </li>
           <li>
@@ -44,35 +44,7 @@
            </a>
            <span class="tooltip">Cadastro</span>
          </li>
-         <!--<li>
-           <a href="#">
-             <i class='bx bx-pie-chart-alt-2' ></i>
-             <span class="links_name">Análises</span>
-           </a>
-           <span class="tooltip">Análises</span>
-         </li>
-         <li>
-           <a href="#">
-             <i class='bx bx-folder' ></i>
-             <span class="links_name">Gerenciador de arquivos</span>
-           </a>
-           <span class="tooltip">Gerenciador de arquivos</span>
-         </li>-->
-         
-         <!--<li>
-           <a href="#">
-             <i class='bx bx-heart' ></i>
-             <span class="links_name">Favoritos</span>
-           </a>
-           <span class="tooltip">Favoritos</span>
-         </li>
-         <li>
-           <a href="#">
-             <i class='bx bx-cog' ></i>
-             <span class="links_name">Configurações</span>
-           </a>
-           <span class="tooltip">Configurações</span>
-         </li>-->
+         <!--LEMBRAR DE CONFIGURAR PARA APARECER O NOME DO USUARIO ONLINE E UMA FOTINHA DE HOMEM OU MULHER-->
          <li class="profile">
              <div class="profile-details">
                <img src="profile.jpg" alt="profileImg">
@@ -104,7 +76,7 @@
               <div class="models-produto-add">+</div>
             </a>
             <div class="models-produto-valor">R$</div>
-            <div class="models-produto-nome">---</div>
+            <div class="models-produto-nome" id="nome-busca">---</div>
             <div class="models-produto-descri">---</div>
           </div>
           <div class="cart-produto">
@@ -148,7 +120,7 @@
                 <div class="modelsInfo-preco">R$--</div>
               </div>
               <div class="modelsInfo-addbutton">Adcionar ao carrinho</div>
-              <div class="modelsInfo-cancelbuttonm">Cancelar</div>
+              <div class="modelsInfo-cancelbutton">Cancelar</div>
             </div>
           </div>
         </div>
@@ -178,6 +150,28 @@
        }
       }
       </script>
+
+      <script class="busca-dinamica">
+        function myFunction() {
+          // Declare variables
+          var input, filter, ul, li, a, i, txtValue;
+          input = document.getElementById('buscarInput');
+          filter = input.value.toUpperCase();
+          ul = document.getElementById("modelo-area");
+          li = ul.getElementsByTagName('nome-busca');
+        
+          // Loop through all list items, and hide those who don't match the search query
+          for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              li[i].style.display = "";
+            } else {
+              li[i].style.display = "none";
+            }
+          }
+        }
+        </script>
   
         <footer>Todos os direitos reservados para Leonardo Fleck e Frederico Lima 2021</footer>
       </body>
