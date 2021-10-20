@@ -27,13 +27,9 @@ route.get("/", async (req, res) => {
   res.render("index", { items: items });
 });
 
-route.get("/info", async (req, res) => {
-  const produtos = await produtos.findAll();
-  res.json(produtos);
-});
-
 route.get("/dashboard", async (req, res) => {
-  res.render("dashboard");
+  const produtos = await produtos.findAll();
+  res.render("dashboard", { items: produtos });
 });
 
 route.get("/cadastro", function (req, res) {
@@ -90,9 +86,42 @@ route.post("/cdp", upload.single("file"), async (req, res) => {
     preco: preco,
     descricao: descricao,
   });
-  res.redirect("/dashboard");
+  res.redirect("/dashboard", { msg: "msg" });
 });
 
-route.get("/udpate/:id", async (req, res) => {});
+route.get("/udpate/:id", async (req, res) => {
+  const produto = await produtos.findByPk(req.params.id);
+  if (!produto) {
+    res.render("update", { msg: "produto não encontrado! " });
+  }
+  res.render("update", {
+    produto,
+  });
+});
+
+route.post("/update/:id", upload.single("file"), async (req, res) => {
+  const produto = await produtos.findByPk(req.params.id);
+  const { nome, preco, descricao } = req.body;
+  const img = req.file.filename;
+
+  produto.nome = nome;
+  produto.img = img;
+  produto.preco = preco;
+  produto.descricao = descricao;
+
+  const produtoUP = await produto.save();
+
+  res.redirect("dashboard", { msg: "Produto atualizado com sucesso!" });
+});
+
+route.post("/deletar/:id", async (req, res) => {
+  const produto = await produtos.findByPk(req.params.id);
+  if (!produto) {
+    res.redirect("dashboard", { msg: "Produto não encontrado" });
+  }
+  await filme.destroy();
+
+  res.redirect("dashboard", { msg: "Produto deletado com sucesso!" });
+});
 
 module.exports = route;
