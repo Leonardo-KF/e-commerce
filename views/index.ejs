@@ -89,7 +89,21 @@
           </div>
         </div>
         <main>
-          <div class="modelo-area"></div>
+          <div class="modelo-area">
+            <% items.forEach(item => { %>
+              <div class="models-produto">
+                <a href="">
+                  <div class="models-produto-img">
+                    <img src="/img/<%= item.img %>" alt="">
+                  </div>
+                  <div class="models-produto-add">+</div>
+                </a>
+                <div class="models-produto-valor"><%= item.valor %></div>
+                <div class="models-produto-nome"><%= item.nome %></div>
+                <div class="models-produto-descri"><%= item.descricao %></div>
+              </div>
+            <% }); %>
+          </div>
         </main>
         <aside>
           <div class='cart-area'>
@@ -124,8 +138,6 @@
             </div>
           </div>
         </div>
-        <script type="text/javascript" src="../controller/models.js"></script>
-        <script type="text/javascript" src="../controller/script.js"></script>
       </section>
       <script>
       let sidebar = document.querySelector(".sidebar");
@@ -134,6 +146,7 @@
     
       closeBtn.addEventListener("click", ()=>{
         sidebar.classList.toggle("open");
+        console.log("rodou");
         menuBtnChange();
       });
     
