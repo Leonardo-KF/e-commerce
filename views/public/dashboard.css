@@ -6,6 +6,10 @@
   font-family: "Poppins" , sans-serif;
 }
 
+footer {
+  margin-left: 78px;
+  text-align: center;
+}
 
 .sidebar{
     position: fixed;
