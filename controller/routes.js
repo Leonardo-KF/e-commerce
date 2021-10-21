@@ -90,6 +90,9 @@ route.post("/login", async (req, res) => {
 });
 
 route.get("/cdp", function (req, res) {
+  setTimeout(() => {
+    msg = "";
+  }, 1000);
   res.render("cadastro_de_produtos", { msg: msg });
 });
 
@@ -114,6 +117,7 @@ route.post("/cdp", upload.single("file"), async (req, res) => {
     preco: preco,
     descricao: descricao,
   });
+  msg = "Produto cadastrado com sucesso!";
   res.redirect("/dashboard");
 });
 
