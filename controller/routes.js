@@ -33,7 +33,7 @@ route.get("/dashboard", async (req, res) => {
 });
 
 route.get("/cadastro", function (req, res) {
-  res.render("cadastro");
+  res.render("cadastro", { msg: "" });
 });
 
 route.post("/cadastro", async (req, res) => {
@@ -41,6 +41,15 @@ route.post("/cadastro", async (req, res) => {
   const user = await users.findAll({
     email: email,
   });
+  if (!nome_completo) {
+    res.render("/cadastro", { msg: "Nome é obrigatório!! " });
+  }
+  if (!email) {
+    res.render("/cadastro", { msg: "Email é obrigatório! " });
+  }
+  if (!senha) {
+    res.render("/cadastro", { msg: "Senha é obrigatório!" });
+  }
   if (user[0] === undefined) {
     const user1 = await users.create({
       nome: nome_completo,
@@ -80,13 +89,25 @@ route.get("/cdp", function (req, res) {
 route.post("/cdp", upload.single("file"), async (req, res) => {
   const { nome, preco, descricao } = req.body;
   const img = req.file.filename;
+  if (!nome) {
+    res.render("/cdp", { msg: "Nome é obrigatório!" });
+  }
+  if (!preco) {
+    res.render("/cdp", { msg: "Preco é obrigatório!" });
+  }
+  if (!descricao) {
+    res.render("/cdp", { msg: "descricao é obrigatório!" });
+  }
+  if (!img) {
+    res.render("/cdp", { msg: "Imagem é obrigatória!" });
+  }
   const produto = await produtos.create({
     nome: nome,
     img: img,
     preco: preco,
     descricao: descricao,
   });
-  res.redirect("/dashboard", { msg: "msg" });
+  res.redirect("/dashboard", { msg: msgCad });
 });
 
 route.get("/udpate/:id", async (req, res) => {
@@ -103,13 +124,25 @@ route.post("/update/:id", upload.single("file"), async (req, res) => {
   const produto = await produtos.findByPk(req.params.id);
   const { nome, preco, descricao } = req.body;
   const img = req.file.filename;
+  if (!nome) {
+    res.render("/cdp", { msg: "Nome é obrigatório!" });
+  }
+  if (!preco) {
+    res.render("/cdp", { msg: "Preco é obrigatório!" });
+  }
+  if (!descricao) {
+    res.render("/cdp", { msg: "descricao é obrigatório!" });
+  }
+  if (!img) {
+    res.render("/cdp", { msg: "Imagem é obrigatória!" });
+  }
 
   produto.nome = nome;
   produto.img = img;
   produto.preco = preco;
   produto.descricao = descricao;
 
-  const produtoUP = await produto.save();
+  await produto.save();
 
   res.redirect("/dashboard", { msg: "Produto atualizado com sucesso!" });
 });
