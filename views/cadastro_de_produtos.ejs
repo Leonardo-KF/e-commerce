@@ -9,26 +9,15 @@
 </head>
 <body>
     <h1> Página de Cadastro de produtos</h1>
-        <section class="Cadastro_de_produtos">
-            <form method="post" enctype="multipart/form-data" action="/cdp">
-                <div class="prod-dash-nome">
-                    <label class="nome" for="nome">Nome do produto: </label>
+        <section class="Cadastro_de_produtos-box">
+            <form method="post" enctype="multipart/form-data" action="/update/<%= produto.id %>" class="Cadastro_de_produtos">
                     <input type="text" name="nome" id="nome" placeholder="Nome do produto" required>
-                </div>
-                <div class="prod-dash-preço">
-                    <label class="preco" for="preco">Preço: </label>
                     <input type="text" name="preco" id="preco" placeholder="Preço produto" required>
-                </div>
-                <div class="prod-dash-descri">
-                    <label class="descricao" for="descricao">Descrição do produto: </label>
                     <input type="text" name="descricao" id="descricao" placeholder="Descrição do produto" required>
-                </div>
-                <div class="prod-dash-img">
-                    <label class="imagem" for="imagem">Imagem: </label>
                     <input type="file" name="file" id="imagem" placeholder="Escolha a imagem do seu produto" required>
-                </div>
-                    <button type="submit" id="cad-dash-prod">Cadastrar Produto</button>
+                    <button type="submit" id="button-dash-prod">Cadastrar Produto</button>
             </form>
+        </section>
 
            
         </section>
