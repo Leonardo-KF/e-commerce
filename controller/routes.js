@@ -111,17 +111,17 @@ route.post("/update/:id", upload.single("file"), async (req, res) => {
 
   const produtoUP = await produto.save();
 
-  res.redirect("dashboard", { msg: "Produto atualizado com sucesso!" });
+  res.redirect("/dashboard", { msg: "Produto atualizado com sucesso!" });
 });
 
 route.post("/deletar/:id", async (req, res) => {
   const produto = await produtos.findByPk(req.params.id);
   if (!produto) {
-    res.redirect("dashboard", { msg: "Produto não encontrado" });
+    res.redirect("/dashboard", { msg: "Produto não encontrado" });
   }
   await filme.destroy();
 
-  res.redirect("dashboard", { msg: "Produto deletado com sucesso!" });
+  res.redirect("/dashboard", { msg: "Produto deletado com sucesso!" });
 });
 
 module.exports = route;
