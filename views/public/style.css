@@ -21,6 +21,10 @@
   cursor: pointer;
 }
 
+#carrinho:hover{
+  background-color: white;
+}
+
 footer {
   margin-left: 78px;
 }
@@ -365,12 +369,15 @@ img {
 .menu-aberto {
   margin-right: 15px;
   font-size: 26px;
-  background-color: black;
-  padding: 5px 20px;
-  border-radius: 5px;
+  background-color: #29254b;
+  padding: 5px 5px;
+  border-radius: 15px;
 }
 
-
+.menu-aberto:hover{
+  background-color: white;
+  border: solid 2px #29254b;
+}
 .menu-aberto span {
   margin-right: 10px;
 }
@@ -407,13 +414,22 @@ h2 {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-#modelo-area-id, #area-prod {
+#modelo-area-id {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   /*grid-template-columns: repeat(3, 1fr);*/
   margin: 10px;
   /*grid-auto-flow: column;*/
+}
+
+#area-prod{
+  display: grid;
+  grid-template-columns: 1fr;
+
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .models-produto {
@@ -440,9 +456,9 @@ h2 {
 }
 
 .models-produto-img img {
-  width: 100%;
+  width: 200px;
   border-radius: 50px;
-  height: auto;
+  height: 200px;
 }
 
 .models-produto-add {
@@ -450,9 +466,9 @@ h2 {
   height: 50px;
   line-height: 50px;
   border-radius: 25px;
-  background-color: blueviolet;
+  background-color: #29254b;
   text-align: center;
-  color: white;
+  color: red;
   font-size: 22px;
   cursor: pointer;
   margin-top: -25px;
@@ -460,7 +476,8 @@ h2 {
 }
 
 .models-produto a:hover .models-produto-add {
-  background-color: #2ecc71;
+  background-color: white;
+  border: solid 2px #29254b;
 }
 
 .models-produto-valor {
@@ -497,13 +514,20 @@ h2 {
 }
 
 #win-body {
-  width: 900px;
+  /*width: 900px;*/
   background-color: #29254b;
   border-radius: 10px;
   box-shadow: 0px 0px 15px #999;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin: 20px 0;
+  /* CSS do homes-section*/
+  width: calc(70% - 78px);
+  transition: all 0.5s ease;
 }
+
+
 
 #bigmodels {
   flex: 1;
@@ -520,6 +544,7 @@ h2 {
 }
 
 #bigmodels img {
+  display: flex;
   height: 400px;
   width: auto;
 }
