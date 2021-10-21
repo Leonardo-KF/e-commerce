@@ -114,7 +114,7 @@ route.post("/cdp", upload.single("file"), async (req, res) => {
     preco: preco,
     descricao: descricao,
   });
-  res.render("dashboard", { msg: msg });
+  res.redirect("/dashboard");
 });
 
 route.get("/update/:id", async (req, res) => {
