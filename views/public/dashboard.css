@@ -6,6 +6,7 @@
   font-family: "Poppins" , sans-serif;
 }
 
+
 .sidebar{
     position: fixed;
     left: 0;
@@ -230,7 +231,7 @@
   }
   .home-section{
     position: relative;
-    background: none;
+    background: #29254b;
     background-size:cover;
     min-height: 100vh;
     top: 0;
@@ -280,4 +281,68 @@ span#close {
 span#close:hover{
   color: rgb(255, 0, 0);
   transform: scale(1.5);
+}
+
+/*CSS DO DASHBOARD GERAL*/
+h1{
+  text-align: center;
+  color: white;
+}
+.produtos-dash-img img{
+  border: solid 1px red;
+  border-radius: 15px;
+}
+
+.menu_de_navi a {
+  background-color: none;
+  border: solid 1px red;
+  border-radius: 3px;
+  color: red;
+  padding: 3px;
+  text-decoration: none;
+  margin-left: 10px;
+  margin-bottom: 100px;
+}
+.menu_de_navi a:hover{
+  background-color: white;
+}
+.menu_de_navi{
+  margin-bottom: 10px;
+}
+.produtos-dashboard a {
+  border: solid 1px red;
+  border-radius: 3px;
+  color: red;
+  padding: 3px;
+  text-decoration: none;
+}
+.produtos-dashboard a:hover{
+  background-color: white;
+}
+.produtos-dashboard {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: auto;
+}
+.btn-dash{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.btn-dash a{
+  margin-right: 10px;
+}
+#del{
+  margin-left: 10px;
+}
+.img-nome-prod{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: 10px;
+}
+.produtos-dashname{
+  color:white;
 }
