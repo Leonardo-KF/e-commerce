@@ -872,25 +872,78 @@ input[type="tel"]:focus {
   text-align: center;
 }
 
-.prod-dash-nome {
+#box-cadastro {
   display: flex;
-  flex-direction: column;
+  max-width: 100%;
+  background-color: #29254b;
+}
+#box-cadastro > section {
+  flex: 1 1 200px;
 }
 
-.prod-dash-preço {
-  display: flex;
-  flex-direction: column;
+#img-cad {
+  margin-left: calc(60% / 2);
 }
-
-.prod-dash-descri {
-  display: flex;
-  flex-direction: column;
+.cadbox h3 {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
 }
-
-.prod-dash-img {
-  display: flex;
-  flex-direction: column;
+#cad input[id="nome"],
+input[id="preco"],
+input[id="descricao"],
+input[id="imagem"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 3px solid red;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
 }
-
-#cad-dash-prod {
+#cad input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus {
+  width: 280px;
+  border-color: #29254b;
+}
+.cadbox {
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
+  background: #29254b;
+}
+.cadbox {
+  width: 450px;
+  height: 344px;
+  padding: 40px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #29254b;
+  text-align: center;
+}
+#button-dash-prod {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  margin-top: 20px;
+  text-align: center;
+  border: 3px solid #2ecc71;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+#button-dash-prod:hover {
+  background: #2ecc71;
 }
