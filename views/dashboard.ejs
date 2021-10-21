@@ -5,42 +5,111 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="dashboard.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="/script.js" defer></script>
     <title>Painel Administrativo</title>
 </head>
-<body>
-    <h1> SEJA BEM VINDO AO ECOMMERCE SEM NOME</h1>
-        <section class="menu de navegação">
-            <a href="/cdp" alt="Botão para a pagina de Cadastro">Cadastro de produto</a></br>
-            <a href="Carrinho.html" alt="Botão para a pagina de Carrinho">Carrinho</a></br>
-            <a href="Detalhes_produto.html" alt="Botão para a pagina de Detalhes do produto">Detalhes de produtos</a></br>
-            <a href="Login.html" alt="Botão para a pagina de Login">Login</a></br>
-            <a href="vendedor.html" alt="Botão para a pagina do vendedor">Administrador</a></br>
-            <a href="index.html" alt="Botão para a pagina inicial">Página Inicial</a></br>
-        </section>
-
-        <section class="painel_inicial">
-            <% if(msg != "") {  %>
-                <section id="msg">
-                    <p><%= msg %></p> <span id="close">&times;</span>
+<body>    
+        <div class="sidebar">
+            <div class="logo-details">
+              <i class='bx bxs-bot icon'></i>
+                <div class="logo_name">E-COMM</div>
+                <i class='bx bx-menu' id="btn" ></i>
+            </div>
+            <ul class="nav-list">
+              <li>
+                  <i class='bx bx-search' ></i>
+                 <input type="text" id="buscarInput" onkeyup="myFunction()" placeholder="Buscar...">
+                 <span class="tooltip">Buscar</span>
+              </li>
+              <li>
+                <a href="/">
+                  <i class='bx bx-home'></i>
+                  <span class="links_name">Homepage</span>
+                </a>
+                 <span class="tooltip">Homepage</span>
+              </li>
+              <li>
+               <a href="/login">
+                 <i class='bx bx-log-in' ></i>
+                 <span class="links_name">Login</span>
+               </a>
+               <span class="tooltip">Login</span>
+             </li>
+             <li>
+               <a href="/cadastro">
+                 <i class='bx bx-user-plus' ></i>
+                 <span class="links_name">Cadastro</span>
+               </a>
+               <span class="tooltip">Cadastro</span>
+             </li>
+             <!--LEMBRAR DE CONFIGURAR PARA APARECER O NOME DO USUARIO ONLINE E UMA FOTINHA DE HOMEM OU MULHER-->
+             <li class="profile">
+                 <div class="profile-details">
+                   <img src="profile.jpg" alt="profileImg">
+                   <div class="name_job">
+                     <div class="name">Prem Shahi</div>
+                     <div class="job">Web designer</div>
+                   </div>
+                 </div>
+                 <i class='bx bx-log-out' id="log_out" ></i>
+             </li>
+            </ul>
+          </div>
+          <section class="home-section">
+            <h1> SEJA BEM VINDO AO PAINEL ADMINISTRATIVO DO E-COMM</h1>
+                <section class="painel_inicial">
+                    <section class="menu_de_navi">
+                        <a id="btn-cad" href="/cdp" alt="Botão para a pagina de Cadastro">Cadastro de produto</a>
+                    </section>
+                    <% if(msg != "") {  %>
+                        <section id="msg">
+                            <p><%= msg %></p> <span id="close">&times;</span>
+                        </section>
+                    <% }  %>
+                    <% items.forEach(item => { %>
+                        <div class="produtos-dashboard">
+                            <div class="img-nome-prod">
+                                <div class="produtos-dash-img">
+                                    <img src="/img/<%= item.img %>" alt="<%= item.nome %>" width="250px" height="250px">
+                                </div>
+                                <div class="produtos-dashname"><%= item.nome %></div>
+                            </div>
+                            <div class="btn-dash">
+                            <a id="del" href="/deletar/<%= item.id %>">DELETAR</a>
+                            <a id="att" href="/update/<%= item.id %>">ATUALIZAR</a>
+                            </div>
+                        </div>
+                    <% }); %>
                 </section>
-            <% }  %>
-            <% items.forEach(item => { %>
-                <div class="produtos-dashboard">
-                    <div class="produtos-dash-img">
-                        <img src="/img/<%= item.img %>" alt="<%= item.nome %>">
-                    </div>
-                    <div class="produtos-dashname"><%= item.nome %></div>
-                    <a href="/deletar/<%= item.id %>">DELETAR</a>
-                    <a href="/update/<%= item.id %>">ATUALIZAR</a>
-                </div>
-            <% }); %>
         </section>
-
-
-        <section class="painel">
-            <!--função para mostrar funções do painel-->
-        </section>
+        <script>
+            let sidebar = document.querySelector(".sidebar");
+            let closeBtn = document.querySelector("#btn");
+            let searchBtn = document.querySelector(".bx-search");
+          
+            closeBtn.addEventListener("click", ()=>{
+              sidebar.classList.toggle("open");
+              console.log("rodou");
+              menuBtnChange();
+            });
+          
+            searchBtn.addEventListener("click", ()=>{
+              sidebar.classList.toggle("open");
+              menuBtnChange();
+            });
+          
+            function menuBtnChange() {
+             if(sidebar.classList.contains("open")){
+               closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+             }else {
+               closeBtn.classList.replace("bx-menu-alt-right","bx-menu");
+             }
+            }
+            </script>
+      
     </br>
         <footer>Todos os direitos reservados para Leonardo Fleck e Frederico Lima 2021</footer>
 </body>
