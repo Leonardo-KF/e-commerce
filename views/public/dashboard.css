@@ -265,6 +265,7 @@ section#msg {
   top: 3rem;
   left: 0;
   right: 0;
+  left: 78px;
   z-index: 100;
   text-align: center;
   font-size: 1.1rem;
@@ -329,6 +330,7 @@ h1{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 .btn-dash a{
   margin-right: 10px;
