@@ -28,8 +28,8 @@ route.get("/", async (req, res) => {
 });
 
 route.get("/dashboard", async (req, res) => {
-  const produtos = await produtos.findAll();
-  res.render("dashboard", { items: produtos });
+  const items = await produtos.findAll();
+  res.render("dashboard", { items: items });
 });
 
 route.get("/cadastro", function (req, res) {
