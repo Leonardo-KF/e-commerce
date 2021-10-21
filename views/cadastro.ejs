@@ -11,7 +11,7 @@
     <title>Cadastro</title>
 </head>
 <body>
-    <h1 id="saudacao"> Página de Cadastro</h1>
+    
     <form action="/cadastro" method="POST">
         <div class="sidebar">
             <div class="logo-details">
@@ -58,7 +58,8 @@
              </li>
             </ul>
           </div>
-          <section class="home-section">
+          <section class="home-section" id="box-cadastro">
+            <header id="saudacao"> Página de Cadastro</header>
               <!--<div class="text">Homepage</div>-->
           
           <script>
@@ -85,27 +86,36 @@
            }
           }
           </script> 
-            <section class="container-cadastro">
+            <section class="cadastro">
                 <form method="POST">
-                    <div>
-                        <label class="nome_completo" for="nome">Nome completo: </label>
+                  <!--<section class="bodybox">
+                    <form class="box" method="post">
+                      <img id="img-login" src="../img/icone-header.png" alt="icone em desenho da máscara f society da série Mister Robot" width="150px" height="150px">
+                      <h1>Login</h1>
+                      <input type="text" name="email" placeholder="email">
+                      <input type="password" name="senha" placeholder="senha">
+                      <input type="submit" name="" value="Login">
+                    </form>-->
+                  </section>
+                <section class="cadbox" id="cad">
+                  <img id="img-login" src="../img/icone-header.png" alt="icone em desenho da máscara f society da série Mister Robot" width="150px" height="150px">
+                  <h3>cadastre-se</h3>
+                  <div>
                         <input type="text" name="nome_completo" id="nome_completo" placeholder="Nome completo" required>
                     </div>
                     <div>
-                        <label class="senha" for="senha">senha: </label>
                         <input type="password" name="senha" id="senha" placeholder="Senha de acesso" required>
                     </div>
                     <div>
-                        <label class="email" for="email">E-mail: </label>
                         <input type="text" name="email" id="email" placeholder="Seu melhor e-mail" required>
                     </div>
                     <div>
-                        <label class="telefone" for="telefone">Telefone: </label>
                         <input type="tel" name="telefone" id="telefone" placeholder="Seu número de telefone" required>
                     </div>
                 </br>
-                    <button id="btn-cad" type="submit">Enviar informações</button>
-              </form>
+                    <button id="btn-cad" type="submit">Cadastrar</button>
+                  </section>
+                  </form>
             </section>
         </section>
     </form>    
