@@ -4,7 +4,7 @@ const multer = require("multer");
 const fs = require("fs");
 const produtos = require(".././model/produtos");
 const users = require(".././model/users");
-const msg = "";
+let msg = "";
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -13,7 +13,7 @@ const storage = multer.diskStorage({
   filename: async function (req, file, cb) {
     const produtos1 = await produtos.findAll();
     const extensaoArquivo = file.originalname.split(".")[1];
-    const novoNomeArquivo = produtos1.length + 1 + Date;
+    const novoNomeArquivo = produtos1.length + 1 + Date.now();
     cb(null, `${novoNomeArquivo}.${extensaoArquivo}`);
   },
 });
@@ -23,7 +23,7 @@ const upload = multer({ storage });
 route.get("/", async (req, res) => {
   const items = await produtos.findAll();
   setTimeout(() => {
-    mensagem = "";
+    msg = "";
   }, 1000);
   res.render("index", { items: items, msg: msg });
 });
@@ -31,14 +31,14 @@ route.get("/", async (req, res) => {
 route.get("/dashboard", async (req, res) => {
   const items = await produtos.findAll();
   setTimeout(() => {
-    mensagem = "";
+    msg = "";
   }, 1000);
   res.render("dashboard", { items: items, msg: msg });
 });
 
 route.get("/cadastro", function (req, res) {
   setTimeout(() => {
-    mensagem = "";
+    msg = "";
   }, 1000);
   res.render("cadastro", { msg: msg });
 });
