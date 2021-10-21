@@ -126,7 +126,6 @@
         <% items.forEach(item => { %>
         <div class="modelsWindowArea" id="w<%= item.id %>">    
           <div class="modelsWindowsBody">
-             <div class="modelsinfo-cancelbutton">voltar</div>
               <div class="modelsbig">
                 <img src="/img/<%= item.img %>" alt="<%= item.nome %>">
               </div>
@@ -137,7 +136,7 @@
                   <div class="modelsInfo-preco">R$<%= item.preco %></div>
                 </div>
                 <div class="modelsInfo-addbutton">Adcionar ao carrinho</div>
-                <div class="modelsInfo-cancelbutton">Cancelar</div>
+                <button class="modelsInfo-cancelbutton" id="voltarflex<%= item.id %>">Voltar</button>
               </div>
           </div>
         </div>
