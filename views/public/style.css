@@ -861,8 +861,15 @@ input[type="tel"]:focus {
 .Cadastro_de_produtos {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 4px solid blue;
+  width: 450px;
+  height: 344px;
+  padding: 40px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #29254b;
+  text-align: center;
 }
 
 .prod-dash-nome {
