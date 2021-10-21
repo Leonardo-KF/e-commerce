@@ -858,11 +858,18 @@ input[type="tel"]:focus {
 
 /* css-cadastro-de-produtos*/
 
-.Cadastro_de_produtos {
+.body-cad{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  background-color: #29254b;
+}
+.Cadastro_de_produtos-box {
   display: flex;
   flex-direction: column;
   width: 450px;
-  height: 344px;
+  height: 474px;
   padding: 40px;
   position: absolute;
   top: 30%;
@@ -872,10 +879,10 @@ input[type="tel"]:focus {
   text-align: center;
 }
 
-#box-cadastro {
+/*#box-cadastro {
   display: flex;
   max-width: 100%;
-  background-color: #29254b;
+  background-color: red;
 }
 #box-cadastro > section {
   flex: 1 1 200px;
@@ -883,13 +890,14 @@ input[type="tel"]:focus {
 
 #img-cad {
   margin-left: calc(60% / 2);
-}
-.cadbox h3 {
+}*/
+.Cadastro_de_produtos-box h1 {
   color: white;
   text-transform: uppercase;
   font-weight: 500;
 }
-#cad input[id="nome"],
+
+.Cadastro_de_produtos-box input[id="nome"],
 input[id="preco"],
 input[id="descricao"],
 input[id="imagem"] {
@@ -906,29 +914,19 @@ input[id="imagem"] {
   border-radius: 24px;
   transition: 0.25s;
 }
-#cad input[type="text"]:focus,
+.Cadastro_de_produtos-box input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="tel"]:focus {
   width: 280px;
-  border-color: #29254b;
+  border-color: white;
 }
-.cadbox {
+.Cadastro_de_produtos-box {
   margin: 0px;
   padding: 0px;
   font-family: sans-serif;
   background: #29254b;
 }
-.cadbox {
-  width: 450px;
-  height: 344px;
-  padding: 40px;
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #29254b;
-  text-align: center;
-}
+
 #button-dash-prod {
   border: 0;
   background: none;

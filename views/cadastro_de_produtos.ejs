@@ -5,11 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Cadastro</title>
 </head>
-<body>
-    <h1> Página de Cadastro de produtos</h1>
+<div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxs-bot icon'></i>
+        <div class="logo_name">E-COMM</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+          <i class='bx bx-search' ></i>
+         <input type="text" placeholder="Buscar...">
+         <span class="tooltip">Buscar</span>
+      </li>
+      <li>
+        <a href="/">
+          <i class='bx bx-home'></i>
+          <span class="links_name">Homepage</span>
+        </a>
+         <span class="tooltip">Homepage</span>
+      </li>
+      <li>
+       <a href="/login">
+         <i class='bx bx-log-in' ></i>
+         <span class="links_name">Login</span>
+       </a>
+       <span class="tooltip">Login</span>
+     </li>
+     <li>
+       <a href="/cadastro">
+         <i class='bx bx-user-plus' ></i>
+         <span class="links_name">Cadastro</span>
+       </a>
+       <span class="tooltip">Cadastro</span>
+     </li>
+     <li class="profile">
+         <div class="profile-details">
+           <img src="profile.jpg" alt="profileImg">
+           <div class="name_job">
+             <div class="name">Prem Shahi</div>
+             <div class="job">Web designer</div>
+           </div>
+         </div>
+         <i class='bx bx-log-out' id="log_out" ></i>
+     </li>
+    </ul>
+</div>
+    <section class="home-section" id="login">
+<body class="body-cad">
         <section class="Cadastro_de_produtos-box">
+            <h1> Cadastro de produtos</h1>
             <form method="post" enctype="multipart/form-data" action="/cdp" class="Cadastro_de_produtos">
                     <input type="text" name="nome" id="nome" placeholder="Nome do produto" required>
                     <input type="text" name="preco" id="preco" placeholder="Preço produto" required>
@@ -19,9 +68,30 @@
             </form>
         </section>
 
-           
-        </section>
-    </br>
-        <footer>Todos os direitos reservados para Leonardo Fleck e Frederico Lima 2021</footer>
+        <script>
+            let sidebar = document.querySelector(".sidebar");
+            let closeBtn = document.querySelector("#btn");
+            let searchBtn = document.querySelector(".bx-search");
+          
+            closeBtn.addEventListener("click", ()=>{
+              sidebar.classList.toggle("open");
+              console.log("rodou");
+              menuBtnChange();
+            });
+          
+            searchBtn.addEventListener("click", ()=>{
+              sidebar.classList.toggle("open");
+              menuBtnChange();
+            });
+          
+            function menuBtnChange() {
+             if(sidebar.classList.contains("open")){
+               closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+             }else {
+               closeBtn.classList.replace("bx-menu-alt-right","bx-menu");
+             }
+            }
+            </script>
+    </section>
 </body>
 </html>
