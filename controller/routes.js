@@ -152,7 +152,7 @@ route.post("/update/:id", upload.single("file"), async (req, res) => {
   produto.descricao = descricao;
 
   await produto.save();
-  msg = "Produto cadastrado com sucesso!";
+  msg = "Produto atualizado com sucesso!";
   res.redirect("/dashboard");
 });
 
