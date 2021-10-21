@@ -78,7 +78,7 @@ route.post("/login", async (req, res) => {
   } else if (login[0] != undefined) {
     res.redirect("/");
   } else {
-    res.render("/login", { msg: msgErro });
+    res.render("login", { msg: msgErro });
   }
 });
 
@@ -107,7 +107,7 @@ route.post("/cdp", upload.single("file"), async (req, res) => {
     preco: preco,
     descricao: descricao,
   });
-  res.render("/dashboard", { msg: msgCad });
+  res.render("dashboard", { msg: msgCad });
 });
 
 route.get("/update/:id", async (req, res) => {
@@ -117,22 +117,25 @@ route.get("/update/:id", async (req, res) => {
   }
   res.render("update", { msg: "", produto });
 });
+route.get("/dashboard", function (req, res) {
+  res.render("dashboard");
+});
 
 route.post("/update/:id", upload.single("file"), async (req, res) => {
   const produto = await produtos.findByPk(req.params.id);
   const { nome, preco, descricao } = req.body;
   const img = req.file.filename;
   if (!nome) {
-    res.render("/cdp", { msg: "Nome é obrigatório!" });
+    res.render("cdp", { msg: "Nome é obrigatório!" });
   }
   if (!preco) {
-    res.render("/cdp", { msg: "Preco é obrigatório!" });
+    res.render("cdp", { msg: "Preco é obrigatório!" });
   }
   if (!descricao) {
-    res.render("/cdp", { msg: "descricao é obrigatório!" });
+    res.render("cdp", { msg: "descricao é obrigatório!" });
   }
   if (!img) {
-    res.render("/cdp", { msg: "Imagem é obrigatória!" });
+    res.render("cdp", { msg: "Imagem é obrigatória!" });
   }
 
   produto.nome = nome;
@@ -142,19 +145,19 @@ route.post("/update/:id", upload.single("file"), async (req, res) => {
 
   await produto.save();
 
-  res.render("/dashboard", { msg: "Produto atualizado com sucesso" });
+  res.render("dashboard", { msg: "Produto atualizado com sucesso" });
 });
 
 route.get("/deletar/:id", async (req, res) => {
   const produto = await produtos.findByPk(req.params.id);
 
   if (!produto) {
-    res.render("/dashboard", { msg: "Não foi possivel deletar o produto!" });
+    res.render("dashboard", { msg: "Não foi possivel deletar o produto!" });
   }
   fs.unlink(".././views/public/img/" + produto.id);
   await filme.destroy();
 
-  res.render("/dashboard", { msg: "Produto deletado com sucesso!" });
+  res.render("dashboard", { msg: "Produto deletado com sucesso!" });
 });
 
 module.exports = route;
