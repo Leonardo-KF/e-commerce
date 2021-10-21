@@ -110,7 +110,7 @@ route.post("/cdp", upload.single("file"), async (req, res) => {
   res.redirect("/dashboard", { msg: msgCad });
 });
 
-route.get("/udpate/:id", async (req, res) => {
+route.get("/update/:id", async (req, res) => {
   const produto = await produtos.findByPk(req.params.id);
   if (!produto) {
     res.render("update", { msg: "produto não encontrado! " });
@@ -147,7 +147,7 @@ route.post("/update/:id", upload.single("file"), async (req, res) => {
   res.redirect("/dashboard", { msg: "Produto atualizado com sucesso!" });
 });
 
-route.post("/deletar/:id", async (req, res) => {
+route.get("/deletar/:id", async (req, res) => {
   const produto = await produtos.findByPk(req.params.id);
   if (!produto) {
     res.redirect("/dashboard", { msg: "Não foi possivel deletar o produto!" });
