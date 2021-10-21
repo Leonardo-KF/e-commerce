@@ -20,8 +20,8 @@
         <section class="painel_inicial">
             <% items.forEach(item => { %>
                 <div class="produtos-dashboard">
-                    <div class="produtos-dash-img">item.img</div>
-                    <div class="produtos-dashname">item.nome</div>
+                    <div class="produtos-dash-img"><%= item.img %></div>
+                    <div class="produtos-dashname"><%= item.nome %></div>
                     <a href="/deletar/<%= item.id %>">DELETAR</a>
                     <a href="/update/<%= item.id %>">ATUALIZAR</a>
                 </div>
