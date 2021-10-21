@@ -17,7 +17,7 @@
 }
 
 #carrinho {
-  font-size:27px;
+  font-size:30px;
   cursor: pointer;
 }
 
@@ -365,10 +365,11 @@ img {
 .menu-aberto {
   margin-right: 15px;
   font-size: 26px;
-  background-color: #a9dcff;
+  background-color: black;
   padding: 5px 20px;
   border-radius: 5px;
 }
+
 
 .menu-aberto span {
   margin-right: 10px;
@@ -382,7 +383,7 @@ img {
 }
 
 aside {
-  background-color: red;
+  background-color: aqua;
   width: 0vw;
   font-family: sans-serif;
   transition: all ease 0.2s;
@@ -433,13 +434,14 @@ h2 {
 .models-produto-img {
   width: 200px;
   height: 200px;
-  background-color: red;
-  border-radius: 100px;
-  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+  border-radius: 50px;
+  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
 }
 
 .models-produto-img img {
   width: 100%;
+  border-radius: 50px;
   height: auto;
 }
 
@@ -494,74 +496,99 @@ h2 {
   overflow: auto;
 }
 
-.modelsWindowsbody {
+#win-body {
   width: 900px;
-  background-color: aliceblue;
+  background-color: #29254b;
   border-radius: 10px;
   box-shadow: 0px 0px 15px #999;
   display: flex;
   margin: 20px 0;
 }
 
-.modelsbig {
+#bigmodels {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.modelsbig--back {
+#bigmodels--back {
   position: absolute;
   width: 30px;
   height: 30px;
   background-color: aqua;
 }
 
-.modelsbig img {
+#bigmodels img {
   height: 400px;
   width: auto;
 }
 
-.modelsInfo {
+#infomodels {
   flex: 1;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   padding-bottom: 50px;
 }
 
-.modelsInfo h2 {
+#infomodels h2 {
   margin-top: 50px;
 }
 
-.modelsInfo .modelsInfo-descri {
+#infomodels {
   font-size: 15px;
   color: white;
   margin-top: 10px;
   font-family: sans-serif;
 }
 
-.models-preco {
+#descriInfoModels {
+  font-size: 15px;
+  color: red;
+  margin-top: 10px;
+  font-family: sans-serif;
+}
+
+#precoModels {
   display: flex;
   align-items: center;
 }
 
-.modelsInfo-preco {
+#preco-modelsInfo {
   font-size: 28px;
   margin-right: 30px;
 }
 
-.modelsInfo-addbutton {
+#btn-add-cart {
   margin-top: 30px;
   padding: 20px 30px;
   border-radius: 20px;
-  background-color: crimson;
+  background-color: green;
+  border: solid 1px white;
   display: inline-block;
   cursor: pointer;
   margin-right: 30px;
 }
+#btn-add-cart:hover{
+  background-color: white;
+  border: solid 1px black;
+  color: black;
+  
+  
+}
 
 .modelsInfo-cancelbutton {
+  margin-top: 30px;
+  padding: 20px 30px;
+  border-radius: 20px;
+  color: white;
+  background-color: red;
   display: inline-block;
   cursor: pointer;
+  margin-right: 30px;
+}
+.modelsInfo-cancelbutton:hover{
+  background-color: white;
+  color: red;
 }
 
 .cart {
