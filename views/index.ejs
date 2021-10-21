@@ -102,7 +102,6 @@
                 </a>
                 <div class="models-produto-valor">R$<%= item.preco.toFixed(2) %></div>
                 <div class="models-produto-nome"><%= item.nome %></div>
-                <div class="models-produto-descri"><%= item.descricao %></div>
               </div>
             <% }); %>
           </div>
@@ -133,7 +132,7 @@
                 <h2><%= item.nome %></h2>
                 <div class="modelsInfo-descri"><%= item.descricao %></div>
                 <div class="models-preco">
-                  <div class="modelsInfo-preco">R$<%= item.preco %></div>
+                  <div class="modelsInfo-preco">R$<%= item.preco.toFixed(2) %></div>
                 </div>
                 <div class="modelsInfo-addbutton">Adcionar ao carrinho</div>
                 <button class="modelsInfo-cancelbutton" id="voltarflex<%= item.id %>">Voltar</button>
