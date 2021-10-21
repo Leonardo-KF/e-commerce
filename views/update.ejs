@@ -7,12 +7,18 @@
     <title>Detalhes</title>
 </head>
 <body>
-    <h1>produto.nome</h1>
+    
     <% if(msg != "") {  %>
         <section id="msg">
             <p><%= msg %></p> <span id="close">&times;</span>
         </section>
     <% }  %>
+    <section class="upprodut">
+        <h1><%= produto.nome %></h1>
+        <section>
+            <img src="/img/<%= produto.img %>" alt="">
+        </section>
+    </section>
         <section class="formulario">
             <form method="post" enctype="multipart/form-data" action="/update/<%= produto.id %>">
                 <div>

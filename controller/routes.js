@@ -1,7 +1,7 @@
 const express = require("express");
 const route = express.Router();
 const multer = require("multer");
-let fs = require("fs");
+const fs = require("fs");
 const produtos = require(".././model/produtos");
 const users = require(".././model/users");
 const msgErro = "Usuario ou senha incorreto!";
@@ -58,7 +58,7 @@ route.post("/cadastro", async (req, res) => {
       senha: senha,
     });
   } else {
-    res.redirect("/cadastro", { msg: msgUser });
+    res.render("/cadastro", { msg: msgUser });
   }
 
   res.redirect("/login");
@@ -78,7 +78,7 @@ route.post("/login", async (req, res) => {
   } else if (login[0] != undefined) {
     res.redirect("/");
   } else {
-    res.redirect("/login", { msg: msgErro });
+    res.render("/login", { msg: msgErro });
   }
 });
 
@@ -107,7 +107,7 @@ route.post("/cdp", upload.single("file"), async (req, res) => {
     preco: preco,
     descricao: descricao,
   });
-  res.redirect("/dashboard", { msg: msgCad });
+  res.render("/dashboard", { msg: msgCad });
 });
 
 route.get("/update/:id", async (req, res) => {
@@ -115,9 +115,7 @@ route.get("/update/:id", async (req, res) => {
   if (!produto) {
     res.render("update", { msg: "produto não encontrado! " });
   }
-  res.render("update", {
-    produto,
-  });
+  res.render("update", { msg: "", produto });
 });
 
 route.post("/update/:id", upload.single("file"), async (req, res) => {
@@ -144,17 +142,19 @@ route.post("/update/:id", upload.single("file"), async (req, res) => {
 
   await produto.save();
 
-  res.redirect("/dashboard", { msg: "Produto atualizado com sucesso!" });
+  res.render("/dashboard", { msg: "Produto atualizado com sucesso" });
 });
 
 route.get("/deletar/:id", async (req, res) => {
   const produto = await produtos.findByPk(req.params.id);
+
   if (!produto) {
-    res.redirect("/dashboard", { msg: "Não foi possivel deletar o produto!" });
+    res.render("/dashboard", { msg: "Não foi possivel deletar o produto!" });
   }
+  fs.unlink(".././views/public/img/" + produto.id);
   await filme.destroy();
 
-  res.redirect("/dashboard", { msg: "Produto deletado com sucesso!" });
+  res.render("/dashboard", { msg: "Produto deletado com sucesso!" });
 });
 
 module.exports = route;
