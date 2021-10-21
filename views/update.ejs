@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="update.css">
     <title>Detalhes</title>
 </head>
-<body>
+<body class="body-cad1">
     
     <% if(msg != "") {  %>
         <section id="msg">
@@ -20,13 +20,13 @@
             <img src="/img/<%= produto.img %>" alt="">
         </section>
     </section>
-        <section class="Cadastro_de_produtos-box">
+        <section class="Cadastro_de_produtos-box1">
             <form method="post" enctype="multipart/form-data" action="/update/<%= produto.id %>" class="Cadastro_de_produtos">
-                    <input type="text" name="nome" id="nome" placeholder="Nome do produto" required>
-                    <input type="text" name="preco" id="preco" placeholder="Preço produto" required>
-                    <input type="text" name="descricao" id="descricao" placeholder="Descrição do produto" required>
-                    <input type="file" name="file" id="imagem" placeholder="Escolha a imagem do seu produto" required>
-                    <button type="submit" id="button-dash-prod">Atualizar Produto</button>
+                    <input type="text" name="nome" id="nome1" placeholder="Nome do produto" required>
+                    <input type="text" name="preco" id="preco1" placeholder="Preço produto" required>
+                    <input type="text" name="descricao" id="descricao1" placeholder="Descrição do produto" required>
+                    <input type="file" name="file" id="imagem1" placeholder="Escolha a imagem do seu produto" required>
+                    <button type="submit" id="button-dash-prod1">Atualizar Produto</button>
             </form>
         </section>
     </br>

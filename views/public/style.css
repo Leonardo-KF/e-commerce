@@ -340,7 +340,7 @@ img {
 .box input[type="text"]:focus,
 .box input[type="password"]:focus {
   width: 280px;
-  border-color: #29254b;
+  border-color: white;
 }
 .box input[type="submit"] {
   border: 0;
@@ -808,7 +808,7 @@ input[id="telefone"] {
 input[type="password"]:focus,
 input[type="tel"]:focus {
   width: 280px;
-  border-color: #29254b;
+  border-color: white;
 }
 .cadbox {
   margin: 0px;
