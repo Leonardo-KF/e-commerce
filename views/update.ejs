@@ -8,7 +8,11 @@
 </head>
 <body>
     <h1>produto.nome</h1>
-
+    <% if(msg != "") {  %>
+        <section id="msg">
+            <p><%= msg %></p> <span id="close">&times;</span>
+        </section>
+    <% }  %>
         <section class="formulario">
             <form method="post" enctype="multipart/form-data" action="/update/<%= produto.id %>">
                 <div>

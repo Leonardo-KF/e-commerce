@@ -69,6 +69,11 @@
             <span class="links_name"></span>
           </div>
         </header>
+        <% if(msg != "") {  %>
+          <section id="msg">
+              <p><%= msg %></p> <span id="close">&times;</span>
+          </section>
+        <% }  %>
         <div class="produtos">
           <div class="models-produto">
             <a href="">

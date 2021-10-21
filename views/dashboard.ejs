@@ -18,6 +18,11 @@
         </section>
 
         <section class="painel_inicial">
+            <% if(msg != "") {  %>
+                <section id="msg">
+                    <p><%= msg %></p> <span id="close">&times;</span>
+                </section>
+            <% }  %>
             <% items.forEach(item => { %>
                 <div class="produtos-dashboard">
                     <div class="produtos-dash-img">
