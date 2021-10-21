@@ -162,11 +162,9 @@ route.get("/deletar/:id", async (req, res) => {
   if (!produto) {
     res.render("dashboard", { msg: "Não foi possivel deletar o produto!" });
   }
-  fs.unlink(".././views/public/img/");
-  console.log(produto.img);
   await produto.destroy();
-
-  res.render("dashboard", { msg: "Produto deletado com sucesso!" });
+  msg = "Produto deletado com sucesso!";
+  res.redirect("/dashboard");
 });
 
 module.exports = route;
