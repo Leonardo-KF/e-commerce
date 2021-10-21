@@ -12,11 +12,19 @@ as.forEach((element) => {
       popup.style.opacity = 1;
     }, 200);
     bot.addEventListener("click", () => {
-      popup.style.opacity = 1;
       setTimeout(() => {
         popup.style.opacity = 0;
+        popup.style.display = "none";
       }, 200);
-      popup.style.display = "none";
     });
   });
 });
+
+const closeMessage = document.querySelector("#close");
+const message = document.querySelector("#msg");
+closeMessage.addEventListener("click", function () {
+  message.style.display = "none";
+});
+setTimeout(() => {
+  message.style.display = "none";
+}, 5000);

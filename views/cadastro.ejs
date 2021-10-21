@@ -61,7 +61,11 @@
           <section class="home-section" id="box-cadastro">
             <header id="saudacao"> Página de Cadastro</header>
               <!--<div class="text">Homepage</div>-->
-          
+              <% if(msg != "") {  %>
+                <section id="msg">
+                    <p><%= msg %></p> <span id="close">&times;</span>
+                </section>
+              <% }  %>
           <script>
           let sidebar = document.querySelector(".sidebar");
           let closeBtn = document.querySelector("#btn");

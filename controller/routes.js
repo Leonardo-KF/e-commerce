@@ -49,7 +49,7 @@ route.post("/cadastro", async (req, res) => {
       senha: senha,
     });
   } else {
-    res.redirect("/cadastro");
+    res.redirect("/cadastro", { msg: msgUser });
   }
 
   res.redirect("/login");
@@ -117,7 +117,7 @@ route.post("/update/:id", upload.single("file"), async (req, res) => {
 route.post("/deletar/:id", async (req, res) => {
   const produto = await produtos.findByPk(req.params.id);
   if (!produto) {
-    res.redirect("/dashboard", { msg: "Produto não encontrado" });
+    res.redirect("/dashboard", { msg: "Não foi possivel deletar o produto!" });
   }
   await filme.destroy();
 
