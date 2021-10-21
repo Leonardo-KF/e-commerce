@@ -16,9 +16,12 @@
   color: red;
 }
 
+#area-prod {
+  display: flex;
+  align-items: flex-start;
+}
 
-
-#carrinho{
+#carrinho {
   font-size:27px;
   cursor: pointer;
 }
@@ -788,7 +791,7 @@ h2 {
 #btn-cad:hover{
   background: #2ecc71;
 }
-.home-section, #saudacao{
+#saudacao{
   display:flex;
   flex-direction: row;
   flex-wrap: nowrap;
