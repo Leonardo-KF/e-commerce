@@ -13,7 +13,7 @@ const storage = multer.diskStorage({
   filename: async function (req, file, cb) {
     const produtos1 = await produtos.findAll();
     const extensaoArquivo = file.originalname.split(".")[1];
-    const novoNomeArquivo = produtos1.length + 1 + Date.now();
+    const novoNomeArquivo = Date.now();
     cb(null, `${novoNomeArquivo}.${extensaoArquivo}`);
   },
 });
@@ -162,8 +162,9 @@ route.get("/deletar/:id", async (req, res) => {
   if (!produto) {
     res.render("dashboard", { msg: "Não foi possivel deletar o produto!" });
   }
-  fs.unlink(".././views/public/img/" + produto.id);
-  await filme.destroy();
+  fs.unlink(".././views/public/img/");
+  console.log(produto.img);
+  await produto.destroy();
 
   res.render("dashboard", { msg: "Produto deletado com sucesso!" });
 });
