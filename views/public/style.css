@@ -17,6 +17,7 @@
 }
 
 
+
 #carrinho{
   font-size:27px;
   cursor: pointer;
@@ -769,7 +770,7 @@ h2 {
   background: #6e6767;
   text-align: center;
 }
-#btn-enviar{
+#btn-cad{
   border:0;
   background: none;
   display: block;
@@ -784,6 +785,16 @@ h2 {
   transition: 0.25s;
   cursor: pointer;
 }
-#btn-enviar:hover{
+#btn-cad:hover{
   background: #2ecc71;
+}
+.home-section, #saudacao{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items:flex-start;
+  background: none;
+  font-size: 30px;
+  color: black;
+  text-decoration: solid 10px;
 }
