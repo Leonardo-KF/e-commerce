@@ -29,7 +29,7 @@ route.get("/", async (req, res) => {
 
 route.get("/dashboard", async (req, res) => {
   const items = await produtos.findAll();
-  res.render("dashboard", { items: items });
+  res.render("dashboard", { items: items, msg: "" });
 });
 
 route.get("/cadastro", function (req, res) {
@@ -56,7 +56,7 @@ route.post("/cadastro", async (req, res) => {
 });
 
 route.get("/login", function (req, res) {
-  res.render("login");
+  res.render("login", { msg: "" });
 });
 
 route.post("/login", async (req, res) => {
@@ -74,7 +74,7 @@ route.post("/login", async (req, res) => {
 });
 
 route.get("/cdp", function (req, res) {
-  res.render("cadastro_de_produtos");
+  res.render("cadastro_de_produtos", { msg: "" });
 });
 
 route.post("/cdp", upload.single("file"), async (req, res) => {
