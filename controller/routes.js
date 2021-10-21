@@ -4,9 +4,7 @@ const multer = require("multer");
 const fs = require("fs");
 const produtos = require(".././model/produtos");
 const users = require(".././model/users");
-const msgErro = "Usuario ou senha incorreto!";
-const msgUser = "Este email já foi cadastrado! Por favor tente novamente";
-const msgCad = "Produto cadastrado com sucesso";
+const msg = "";
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -15,7 +13,7 @@ const storage = multer.diskStorage({
   filename: async function (req, file, cb) {
     const produtos1 = await produtos.findAll();
     const extensaoArquivo = file.originalname.split(".")[1];
-    const novoNomeArquivo = produtos1.length + 1;
+    const novoNomeArquivo = produtos1.length + 1 + Date;
     cb(null, `${novoNomeArquivo}.${extensaoArquivo}`);
   },
 });
@@ -24,16 +22,25 @@ const upload = multer({ storage });
 
 route.get("/", async (req, res) => {
   const items = await produtos.findAll();
-  res.render("index", { items: items, msg: "" });
+  setTimeout(() => {
+    mensagem = "";
+  }, 1000);
+  res.render("index", { items: items, msg: msg });
 });
 
 route.get("/dashboard", async (req, res) => {
   const items = await produtos.findAll();
-  res.render("dashboard", { items: items, msg: "" });
+  setTimeout(() => {
+    mensagem = "";
+  }, 1000);
+  res.render("dashboard", { items: items, msg: msg });
 });
 
 route.get("/cadastro", function (req, res) {
-  res.render("cadastro", { msg: "" });
+  setTimeout(() => {
+    mensagem = "";
+  }, 1000);
+  res.render("cadastro", { msg: msg });
 });
 
 route.post("/cadastro", async (req, res) => {
@@ -42,13 +49,13 @@ route.post("/cadastro", async (req, res) => {
     email: email,
   });
   if (!nome_completo) {
-    res.render("/cadastro", { msg: "Nome é obrigatório!! " });
+    res.render("cadastro", { msg: "Nome é obrigatório!! " });
   }
   if (!email) {
-    res.render("/cadastro", { msg: "Email é obrigatório! " });
+    res.render("cadastro", { msg: "Email é obrigatório! " });
   }
   if (!senha) {
-    res.render("/cadastro", { msg: "Senha é obrigatório!" });
+    res.render("cadastro", { msg: "Senha é obrigatório!" });
   }
   if (user[0] === undefined) {
     const user1 = await users.create({
@@ -58,14 +65,14 @@ route.post("/cadastro", async (req, res) => {
       senha: senha,
     });
   } else {
-    res.render("/cadastro", { msg: msgUser });
+    res.render("cadastro", { msg: msg });
   }
 
   res.redirect("/login");
 });
 
 route.get("/login", function (req, res) {
-  res.render("login", { msg: "" });
+  res.render("login", { msg: msg });
 });
 
 route.post("/login", async (req, res) => {
@@ -78,28 +85,28 @@ route.post("/login", async (req, res) => {
   } else if (login[0] != undefined) {
     res.redirect("/");
   } else {
-    res.render("login", { msg: msgErro });
+    res.render("login", { msg: msg });
   }
 });
 
 route.get("/cdp", function (req, res) {
-  res.render("cadastro_de_produtos", { msg: "" });
+  res.render("cadastro_de_produtos", { msg: msg });
 });
 
 route.post("/cdp", upload.single("file"), async (req, res) => {
   const { nome, preco, descricao } = req.body;
   const img = req.file.filename;
   if (!nome) {
-    res.render("/cdp", { msg: "Nome é obrigatório!" });
+    res.render("cadastro_de_produtos", { msg: "Nome é obrigatório!" });
   }
   if (!preco) {
-    res.render("/cdp", { msg: "Preco é obrigatório!" });
+    res.render("cadastro_de_produtos", { msg: "Preco é obrigatório!" });
   }
   if (!descricao) {
-    res.render("/cdp", { msg: "descricao é obrigatório!" });
+    res.render("cadastro_de_produtos", { msg: "descricao é obrigatório!" });
   }
   if (!img) {
-    res.render("/cdp", { msg: "Imagem é obrigatória!" });
+    res.render("cadastro_de_produtos", { msg: "Imagem é obrigatória!" });
   }
   const produto = await produtos.create({
     nome: nome,
@@ -107,7 +114,7 @@ route.post("/cdp", upload.single("file"), async (req, res) => {
     preco: preco,
     descricao: descricao,
   });
-  res.render("dashboard", { msg: msgCad });
+  res.render("dashboard", { msg: msg });
 });
 
 route.get("/update/:id", async (req, res) => {
@@ -115,8 +122,9 @@ route.get("/update/:id", async (req, res) => {
   if (!produto) {
     res.render("update", { msg: "produto não encontrado! " });
   }
-  res.render("update", { msg: "", produto });
+  res.render("update", { msg: msg, produto });
 });
+
 route.get("/dashboard", function (req, res) {
   res.render("dashboard");
 });
@@ -126,16 +134,16 @@ route.post("/update/:id", upload.single("file"), async (req, res) => {
   const { nome, preco, descricao } = req.body;
   const img = req.file.filename;
   if (!nome) {
-    res.render("cdp", { msg: "Nome é obrigatório!" });
+    res.render("update/:" + req.params.id, { msg: "Nome é obrigatório!" });
   }
   if (!preco) {
-    res.render("cdp", { msg: "Preco é obrigatório!" });
+    res.render("update/:" + req.params.id, { msg: "Preco é obrigatório!" });
   }
   if (!descricao) {
-    res.render("cdp", { msg: "descricao é obrigatório!" });
+    res.render("update/:" + req.params.id, { msg: "descricao é obrigatório!" });
   }
   if (!img) {
-    res.render("cdp", { msg: "Imagem é obrigatória!" });
+    res.render("update/:" + req.params.id, { msg: "Imagem é obrigatória!" });
   }
 
   produto.nome = nome;
@@ -144,8 +152,8 @@ route.post("/update/:id", upload.single("file"), async (req, res) => {
   produto.descricao = descricao;
 
   await produto.save();
-
-  res.render("dashboard", { msg: "Produto atualizado com sucesso" });
+  msg = "Produto cadastrado com sucesso!";
+  res.redirect("/dashboard");
 });
 
 route.get("/deletar/:id", async (req, res) => {
