@@ -527,13 +527,15 @@ h2 {
   /* CSS do homes-section*/
   width: calc(70% - 78px);
   transition: all 0.5s ease;
+  justify-items: center;
 }
 
 #bigmodels {
-  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 20px;
+  border-radius: 15px;
 }
 
 #bigmodels--back {
@@ -859,7 +861,7 @@ input[type="tel"]:focus {
 
 /* css-cadastro-de-produtos*/
 
-.body-cad{
+.body-cad {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
