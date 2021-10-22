@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="../style2.css">
     <title>Detalhes</title>
 </head>
-<body class="body-cad1">
-    
+<body>
+    <section class="body-cad1">
     <% if(msg != "") {  %>
         <section id="msg">
             <p><%= msg %></p> <span id="close">&times;</span>
@@ -16,10 +16,9 @@
     <% }  %>
     <section class="upprodut">
         <h1><%= produto.nome %></h1>
-        <section>
-            <img src="/img/<%= produto.img %>" alt="">
-        </section>
+        <img src="/img/<%= produto.img %>" width="250px" height="250px" alt="">
     </section>
+    </br>
         <section class="Cadastro_de_produtos-box1">
             <form method="post" enctype="multipart/form-data" action="/update/<%= produto.id %>">
                     <input type="text" name="nome" id="nome1" placeholder="Nome do produto" required>
@@ -31,5 +30,7 @@
         </section>
     </br>
         <footer>Todos os direitos reservados para Leonardo Fleck e Frederico Lima 2021</footer>
+
+    </section>
 </body>
 </html>
